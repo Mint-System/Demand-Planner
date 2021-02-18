@@ -2,9 +2,24 @@
 
 Get order proposals for multi-level sub-products.
 
-## Testdata
+## Test Data
+
+The test data set contains a manufacturing setup for a mountain bike. The product is assembled from manufactured and purchased parts.
+
+![](static/description/Mountain%20Bike.png)
+
+## Import Sequence
+
+Import csv files from demo folder.
+
+1. Import `res.partner.csv`
+2. Import `product.template.csv`
+3. Import `product.supplierinfo.csv`
+4. Import `mrp.bom.csv`
 
 ### Export Templates
+
+When exporting models use these fields and save as csv file.
 
 **product.product**
 
@@ -43,10 +58,3 @@ Delivery Lead Time
 Name
 Is a Company
 ```
-
-## Import Sequence
-
-1. Import `res.partner.csv`
-2. Import `product.template.csv`
-3. Import `product.suppliefinfo.csv`
-4. Import `mrp.bom.csv`
