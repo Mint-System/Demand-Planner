@@ -8,6 +8,12 @@ The test data set contains a manufacturing setup for a mountain bike. The produc
 
 ![](static/description/Mountain%20Bike.png)
 
+**BoM**
+
+This is the bill of material with lead times:
+
+![](static/description/BoM.png)
+
 ## Import Sequence
 
 Import csv files from demo folder.
