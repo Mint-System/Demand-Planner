@@ -18,10 +18,10 @@ This is the bill of material with lead times:
 
 Import csv files from demo folder.
 
-1. Import `res.partner.csv`
-2. Import `product.template.csv`
-3. Import `product.supplierinfo.csv`
-4. Import `mrp.bom.csv`
+1. Navigate to *Contacts* and import `res.partner.csv`
+2. Navigate to *Manufacturing > Products > Product Variants* and import `product.product.csv`
+3. Navigate to *Purchase > Configuration > Vendor Pricelists* and import `product.supplierinfo.csv`
+4. Navigate to *Manufacturing > Products > Bills of Materials* and import `mrp.bom.csv`
 
 ### Export Templates
 

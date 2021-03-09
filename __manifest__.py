@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "demand_planner",
+    'name': "Demand Planner",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -10,17 +10,14 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Mint System GmbH",
+    'website': "https://www.mint-system.ch",
 
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'category': 'Manufacturing',
+    'version': '14.0.0.0.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['mrp', 'purchase'],
+    'depends': ['mrp', 'purchase', 'contacts'],
 
     # always loaded
     'data': [
