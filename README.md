@@ -6,13 +6,13 @@ Get order proposals for multi-level sub-products.
 
 The test data set contains a manufacturing setup for a mountain bike. The product is assembled from manufactured and purchased parts.
 
-![](static/description/Mountain%20Bike.png)
+![](demand_planner_demo/static/description/Mountain%20Bike.png)
 
 **BoM**
 
 This is the bill of material with lead times:
 
-![](static/description/BoM.png)
+![](demand_planner_demo/static/description/BoM.png)
 
 ## Import Sequence
 
