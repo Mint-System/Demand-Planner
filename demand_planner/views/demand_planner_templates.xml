@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Assests for the js file render -->
+    <template id="button_render_js" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script src="demand_planner/static/src/js/action_refresh.js" type="text/javascript"/>
+        </xpath>
+    </template>
+</odoo>

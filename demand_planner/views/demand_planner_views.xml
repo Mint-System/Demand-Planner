@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="demand_planner.list">
+        <field name="name">demand.planner.list</field>
+        <field name="model">demand.planner</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="proposed_order_date &lt; now" create="0">
+                <field name="product_id"/>
+                <field name="proposed_order_date"/>
+                <field name="delivery_order"/>
+                <field name="delivery_order_date"/>
+                <field name="qty"/>
+                <button name="action_replenish" string="Replenish" type="object" class="o_replenish_buttons"
+                        icon="fa-refresh"/>
+            </tree>
+        </field>
+    </record>
+    <record id='demand_planner.search' model='ir.ui.view'>
+        <field name='name'>demand.planner.search</field>
+        <field name='model'>demand.planner</field>
+        <field name='arch' type='xml'>
+            <search string='Demand Planner'>
+                <field name="proposed_order_date"/>
+                <filter string="7 days" name="proposed_order_date_filter"
+                        domain="[('proposed_order_date','&lt;=', ((context_today()+datetime.timedelta(days=7)).strftime('%Y-%m-%d')))]"/>
+            </search>
+        </field>
+    </record>
+    <record id="action_demand_planner" model="ir.actions.act_window">
+        <field name="name">Demand Planner window</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">demand.planner</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{"search_default_proposed_order_date_filter": 1}</field>
+        <field name="search_view_id" ref="demand_planner.search"/>
+    </record>
+    <menuitem action="action_demand_planner" id="inventory_demand_planner" name="Demand Planner" sequence="11"
+              parent="stock.menu_warehouse_report"/>
+</odoo>

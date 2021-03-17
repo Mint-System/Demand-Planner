@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+  <t t-extend="ListView.buttons">
+    <t t-jquery="div.o_list_buttons" t-operation="append">
+      <button t-if="widget.modelName == 'demand.planner'" class="btn btn-primary oe_action_button" type="button"
+              accesskey="f">Refresh</button>
+    </t>
+  </t>
+</template>

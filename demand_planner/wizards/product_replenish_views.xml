@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Inherited views-->
+    <record id="view_product_replenish_inherit_demand_planner" model="ir.ui.view">
+        <field name="name">view.product.replenish.inherit.demand.planner</field>
+        <field name="model">product.replenish</field>
+        <field name="inherit_id" ref="stock.view_product_replenish"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="route_ids" position="attributes">
+                <attribute name="domain">[('product_ids', 'in', [product_id])]</attribute>
+                <attribute name="options">{'no_create': True}</attribute>
+            </field>
+            <xpath expr="//group[1]" position="after">
+                <group>
+                    <field name="seller_id" widget="selection"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
