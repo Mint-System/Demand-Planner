@@ -22,7 +22,6 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'data/demand_planner_data.xml',
         'views/demand_planner_templates.xml',
         'views/demand_planner_views.xml',
         'views/res_config_settings_views.xml',
@@ -31,4 +30,6 @@
     'qweb': [
         "static/src/xml/listview_refresh.xml",
     ],
+    'installable': True,
+    'application': True,
 }

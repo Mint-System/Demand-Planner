@@ -130,28 +130,41 @@ class DemandPlanner(models.Model):
         deliveries = self._get_pickings()
         delivery_process = []
         products = {}  # To store the products BOM structure [ Bike, Table ]
+        # Assuming we have to process all categories
+        domain = []
+        ICP = self.env['ir.config_parameter'].sudo()
+        # Check for option of theoritical order in settings
+        is_calculate_theoretical_order = ICP.get_param('demand_planner.is_calculate_theoretical_order', 0)
+        if is_calculate_theoretical_order:
+            product_category_id = int(ICP.get_param('demand_planner.product_category_id', 0))
+            # Set the domain for child categories 
+            if product_category_id:
+                domain = [('id', 'child_of', product_category_id)]
+        product_category_ids = self.env['product.category'].search(domain).ids
+
         for delivery in deliveries:
             sale = delivery.sale_id
             delivery_date = sale.commitment_date or delivery.scheduled_date
-            # Process the products in deliveries
             for saleline in delivery.sale_id.order_line:
                 main_product = saleline.product_id
-                # Check for bom, if multiple found take the latest created bom
-                bom = main_product.bom_ids and main_product.bom_ids[-1]
-                if bom:
-                    delivery_process.append({
-                        'delivery_id': delivery.id,
-                        'delivery_date': delivery_date,
-                        'sale_qty': saleline.product_uom_qty,
-                        'product': main_product.id,
-                    })
-                # Process only if the product is not found in products dict
-                if main_product.id not in products:
-                    # Ignore products without BoM as such data will have pickings and reflects on the stock
+                # Check if product in order_line belongs to categories computed
+                if main_product.categ_id.id in product_category_ids:
+                    # Check for bom, if multiple found take the latest created bom
+                    bom = main_product.bom_ids and main_product.bom_ids[-1]
                     if bom:
-                        bom_lines = self._get_pdf_line(bom.id, False, 1, [], True)
-                        # Store the bom_lines in products dict
-                        products[main_product.id] = bom_lines
+                        delivery_process.append({
+                            'delivery_id': delivery.id,
+                            'delivery_date': delivery_date,
+                            'sale_qty': saleline.product_uom_qty,
+                            'product': main_product.id,
+                        })
+                    # Process only if the product is not found in products dict
+                    if main_product.id not in products:
+                        # Ignore products without BoM as such data will have pickings and reflects on the stock
+                        if bom:
+                            bom_lines = self._get_pdf_line(bom.id, False, 1, [], True)
+                            # Store the bom_lines in products dict
+                            products[main_product.id] = bom_lines
         return products, delivery_process
 
     def _get_forecasted_stock(self, product_id, date, line_data):
