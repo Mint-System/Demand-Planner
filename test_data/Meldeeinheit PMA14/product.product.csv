@@ -1,0 +1,379 @@
+ID,Name,Product Type,Cost,Manufacturing Lead Time,Customer Lead Time,Routes
+9503,[K700497] Leiterplatte PMA14 Netzwerkkarte,Storable Product,,1,,Buy
+4717,[K150003] WID 10 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4719,[K150005] WID 100 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4723,[K150009] Ker-Kond 100nF/50V 0805 10%,Storable Product,,1,,Buy
+4724,[K150010] Ker-Kond 10nF  0805 X7R 10% 50V,Storable Product,,1,,Buy
+4726,[K150012] Ker-Kond 1nF/50V 10% 0805,Storable Product,,1,,Buy
+4733,[K150019] WID 22 OHM SMD 0805,Storable Product,,1,,Buy
+4736,[K150022] WID 1.5 KOHM SMD 0805,Storable Product,,1,,Buy
+4740,[K150026] Ker-Kond 22nF/50V  0805,Storable Product,,1,,Buy
+4744,[K150030] Ker-Kond 1uF/25V  0805 Tantalersatz,Storable Product,,1,,Buy
+4786,[K150072] WID 100 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4790,[K150076] WID 0 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4800,[K150086] Ta-Elko 100uF/10V   7343,Storable Product,,1,,Buy
+4802,[K150088] WID 390 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4811,[K150097] WID 270 OHM SMD 0805 1% (Kopie),Storable Product,,1,,Buy
+4819,[K150105] WID 9.1 KOHM SMD 0805 1% (Kopie),Storable Product,,1,,Buy
+4820,[K150106] Ker-Kond 10uF/10V  0805 Tantalersatz 10%,Storable Product,,1,,Buy
+4870,[K150156] WID 33 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4874,[K150160] WID 12.1 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4875,[K150161] WID 49.9 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4877,[K150163] Ker-Kond 470pF/50V  0805,Storable Product,,1,,Buy
+4881,"[K150167] EMI Filterkette 600 OHM, 100 MHz",Storable Product,,1,,Buy
+4883,[K150169] 10/100BASE-TX Magnetic Module (1CT:1CT) / (1CT:1CT),Storable Product,,1,,Buy
+4889,[K150175] Ker-Kond 4.7pF/50V 0805,Storable Product,,1,,Buy
+4899,[K150185] Stromkompensierter SMD Line Filter WE-CNSW 90R @ 100 MHZ,Storable Product,,1,,Buy
+4900,[K150186] WE-CBF SMD-Ferrit 600R @ 100 MHZ,Storable Product,,1,,Buy
+5929,[K250005] LED grün  SMD 1206,Storable Product,,1,,Buy
+5930,[K250006] LED rot  SMD 1206,Storable Product,,1,,Buy
+5948,[K250024] LED gelb  SMD 1206,Storable Product,,1,,Buy
+6001,[K250077] MOSFET P BSS 84 geg.  Sot-23,Storable Product,,1,,Buy
+6030,[K250106] Schottky-Diode PMEG4005AEA,Storable Product,,1,,Buy
+6066,[K250141] Oszillator 50.00 MHz  SMD KXO-V97T,Storable Product,,1,,Buy
+6067,[K250142] 3.3V to +5V RS-232 Transceivers SP3222EBCY-L SMD. TSSOP20,Storable Product,,1,,Buy
+6068,[K250143] 10 / 100 Ethernet Tranceiver LAN8720A with HP Auto-MDIX Support QFN24,Storable Product,,1,,Buy
+6069,[K250144] TVS-Diodenarray SRV05-4HTG 20kV SOT-23-6,Storable Product,,1,,Buy
+6071,"[K250146] Single Current Limited, Power Distribution Switches SOT-23-5",Storable Product,,1,,Buy
+6072,[K250147] Single Inverter AHC1G04 SOT-23-5,Storable Product,,1,,Buy
+7072,[K300748] BUCHSENLEISTE 2x10,Storable Product,,1,,Buy
+7102,[K300778] BUCHSENLEISTE 2x5,Storable Product,,1,,Buy
+7105,[K300781] DIN41612 B/3 Messerleiste,Storable Product,,1,,Buy
+7944,[K500068] MUTTER M2.5,Storable Product,,1,,Buy
+8094,[K500265] KREUZ-SCHR. M2.5x10,Storable Product,,1,,Buy
+7105,[K300781] DIN41612 B/3 Messerleiste,Storable Product,,1,,Buy
+9503,[K700497] Leiterplatte PMA14 Netzwerkkarte,Storable Product,,1,,Buy
+4800,[K150086] Ta-Elko 100uF/10V   7343,Storable Product,,1,,Buy
+7072,[K300748] BUCHSENLEISTE 2x10,Storable Product,,1,,Buy
+7102,[K300778] BUCHSENLEISTE 2x5,Storable Product,,1,,Buy
+4899,[K150185] Stromkompensierter SMD Line Filter WE-CNSW 90R @ 100 MHZ,Storable Product,,1,,Buy
+4900,[K150186] WE-CBF SMD-Ferrit 600R @ 100 MHZ,Storable Product,,1,,Buy
+4717,[K150003] WID 10 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4719,[K150005] WID 100 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4723,[K150009] Ker-Kond 100nF/50V 0805 10%,Storable Product,,1,,Buy
+4724,[K150010] Ker-Kond 10nF  0805 X7R 10% 50V,Storable Product,,1,,Buy
+4726,[K150012] Ker-Kond 1nF/50V 10% 0805,Storable Product,,1,,Buy
+4733,[K150019] WID 22 OHM SMD 0805,Storable Product,,1,,Buy
+4736,[K150022] WID 1.5 KOHM SMD 0805,Storable Product,,1,,Buy
+4740,[K150026] Ker-Kond 22nF/50V  0805,Storable Product,,1,,Buy
+4744,[K150030] Ker-Kond 1uF/25V  0805 Tantalersatz,Storable Product,,1,,Buy
+4786,[K150072] WID 100 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4790,[K150076] WID 0 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4802,[K150088] WID 390 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4811,[K150097] WID 270 OHM SMD 0805 1% (Kopie),Storable Product,,1,,Buy
+4819,[K150105] WID 9.1 KOHM SMD 0805 1% (Kopie),Storable Product,,1,,Buy
+4820,[K150106] Ker-Kond 10uF/10V  0805 Tantalersatz 10%,Storable Product,,1,,Buy
+4870,[K150156] WID 33 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4874,[K150160] WID 12.1 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4875,[K150161] WID 49.9 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4877,[K150163] Ker-Kond 470pF/50V  0805,Storable Product,,1,,Buy
+4881,"[K150167] EMI Filterkette 600 OHM, 100 MHz",Storable Product,,1,,Buy
+4883,[K150169] 10/100BASE-TX Magnetic Module (1CT:1CT) / (1CT:1CT),Storable Product,,1,,Buy
+4889,[K150175] Ker-Kond 4.7pF/50V 0805,Storable Product,,1,,Buy
+5929,[K250005] LED grün  SMD 1206,Storable Product,,1,,Buy
+5930,[K250006] LED rot  SMD 1206,Storable Product,,1,,Buy
+5948,[K250024] LED gelb  SMD 1206,Storable Product,,1,,Buy
+6001,[K250077] MOSFET P BSS 84 geg.  Sot-23,Storable Product,,1,,Buy
+6030,[K250106] Schottky-Diode PMEG4005AEA,Storable Product,,1,,Buy
+6066,[K250141] Oszillator 50.00 MHz  SMD KXO-V97T,Storable Product,,1,,Buy
+6067,[K250142] 3.3V to +5V RS-232 Transceivers SP3222EBCY-L SMD. TSSOP20,Storable Product,,1,,Buy
+6068,[K250143] 10 / 100 Ethernet Tranceiver LAN8720A with HP Auto-MDIX Support QFN24,Storable Product,,1,,Buy
+6069,[K250144] TVS-Diodenarray SRV05-4HTG 20kV SOT-23-6,Storable Product,,1,,Buy
+6071,"[K250146] Single Current Limited, Power Distribution Switches SOT-23-5",Storable Product,,1,,Buy
+6072,[K250147] Single Inverter AHC1G04 SOT-23-5,Storable Product,,1,,Buy
+7944,[K500068] MUTTER M2.5,Storable Product,,1,,Buy
+8094,[K500265] KREUZ-SCHR. M2.5x10,Storable Product,,1,,Buy
+906,[010820P] PMA14 Powerprint 85 - 230 VAC,Storable Product,,1,,Manufacture
+905,[010820N] PMA14 Netzwerkprint,Storable Product,,1,,Manufacture
+7920,[K500024] DIST-BOLZEN M3x14x5,Storable Product,,1,,Buy
+8037,[K500194] KREUZ-SCHR. M3x5,Storable Product,,1,,Buy
+9475,[K700469] Leiterplatte PMA14 Backplane,Storable Product,,1,,Buy
+6527,[K300126] STIFTLEISTE 10 POL,Storable Product,,1,,Buy
+6759,[K300437] RJ45 Jack 8/8pol geschirmt,Storable Product,,1,,Buy
+6786,[K300464] USB Stecker Typ A stehend,Storable Product,,1,,Buy
+7074,"[K300750] Leiterplatten-Anschlussklemme - SPTA 1/ 8-5,0",Storable Product,,1,,Buy
+7075,[K300751] DIN41612 32D Buchse Pinlänge 2.9mm,Storable Product,,1,,Buy
+7944,[K500068] MUTTER M2.5,Storable Product,,1,,Buy
+4823,[K150109] WID 75 OHM SMD 0805,Storable Product,,1,,Buy
+4887,[K150173] Ker-Kond 1nF/2kV 1206,Storable Product,,1,,Buy
+7127,[K300803] DIN41612 B/3 Federleiste,Storable Product,,1,,Buy
+7128,[K300804] DIN41612 H11 Federleiste,Storable Product,,1,,Buy
+8024,[K500179] KREUZ-SCHR. M2.5x8,Storable Product,,1,,Buy
+8964,[K600603] Beschriftungsstreifen zu Projekt PMA14 Backplane,Storable Product,,1,,Buy
+9475,[K700469] Leiterplatte PMA14 Backplane,Storable Product,,1,,Buy
+6527,[K300126] STIFTLEISTE 10 POL,Storable Product,,1,,Buy
+6759,[K300437] RJ45 Jack 8/8pol geschirmt,Storable Product,,1,,Buy
+6786,[K300464] USB Stecker Typ A stehend,Storable Product,,1,,Buy
+7074,"[K300750] Leiterplatten-Anschlussklemme - SPTA 1/ 8-5,0",Storable Product,,1,,Buy
+7075,[K300751] DIN41612 32D Buchse Pinlänge 2.9mm,Storable Product,,1,,Buy
+7944,[K500068] MUTTER M2.5,Storable Product,,1,,Buy
+4823,[K150109] WID 75 OHM SMD 0805,Storable Product,,1,,Buy
+4887,[K150173] Ker-Kond 1nF/2kV 1206,Storable Product,,1,,Buy
+7127,[K300803] DIN41612 B/3 Federleiste,Storable Product,,1,,Buy
+7128,[K300804] DIN41612 H11 Federleiste,Storable Product,,1,,Buy
+8024,[K500179] KREUZ-SCHR. M2.5x8,Storable Product,,1,,Buy
+8964,[K600603] Beschriftungsstreifen zu Projekt PMA14 Backplane,Storable Product,,1,,Buy
+9472,[K700466] Leiterplatte PMA14 Versorgungskarte,Storable Product,,1,,Buy
+4717,[K150003] WID 10 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4719,[K150005] WID 100 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4723,[K150009] Ker-Kond 100nF/50V 0805 10%,Storable Product,,1,,Buy
+4724,[K150010] Ker-Kond 10nF  0805 X7R 10% 50V,Storable Product,,1,,Buy
+4736,[K150022] WID 1.5 KOHM SMD 0805,Storable Product,,1,,Buy
+4743,"[K150029] Ker-Kond 10uF/50V X5R, 10%  1210 Tantalersatz",Storable Product,,1,,Buy
+4802,[K150088] WID 390 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4804,[K150090] WID 560 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4814,[K150100] WID 2.7 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4820,[K150106] Ker-Kond 10uF/10V  0805 Tantalersatz 10%,Storable Product,,1,,Buy
+4879,"[K150165] EMI Filterkette WE-CBF 1 KOHM, 100 MHz",Storable Product,,1,,Buy
+4891,[K150177] Stromkompensierter SMD Line Filter WE-SL2 51uH 1A,Storable Product,,1,,Buy
+4905,[K150191] WE-CBF SMD-Ferrit 0805 68R @ 1000 MHz,Storable Product,,1,,Buy
+4906,[K150192] Ker-Kond 1uF/50V 0805 X7R 10%,Storable Product,,1,,Buy
+5929,[K250005] LED grün  SMD 1206,Storable Product,,1,,Buy
+5941,[K250017] Diode BAS16   SOT23,Storable Product,,1,,Buy
+5975,[K250051] Schottky-Diode SK54  SMB,Storable Product,,1,,Buy
+5985,[K250061] MOSFET PMBF 170  Sot-23,Storable Product,,1,,Buy
+6070,"[K250145] Relais SMD 24 VDC, 200mW, 250 AC/220DC",Storable Product,,1,,Buy
+6091,[K250166] LM25011 Buck Regulator with Adjustable Current Limit,Storable Product,,1,,Buy
+4585,[K101047] SI-Halter 5x20mm FPC5,Storable Product,,1,,Buy
+4586,[K101048] Feinsicherung 4A träge  5x20mm,Storable Product,,1,,Buy
+4595,[K101057] Stromkompensierte Netzdrossel WE-LF 10mH 0.7A,Storable Product,,1,,Buy
+5873,[K200600] Schaltnetzteile 24V 0.9A 21.6W 85-264VAC,Storable Product,,1,,Buy
+7944,[K500068] MUTTER M2.5,Storable Product,,1,,Buy
+4737,[K150023] WID 4.7 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4843,[K150129] WID 82 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4887,[K150173] Ker-Kond 1nF/2kV 1206,Storable Product,,1,,Buy
+4888,[K150174] Ker-Kond 1nF/4kV 1825,Storable Product,,1,,Buy
+4902,[K150188] WE-TPC SMD-Speicherdrossel 15uH,Storable Product,,1,,Buy
+4903,[K150189] WE-LQS SMD Speicherdrossel 1uH,Storable Product,,1,,Buy
+4904,[K150190] WE-CBF SMD-Ferrit 0805 600R @ 100 MHz,Storable Product,,1,,Buy
+4907,[K150193] WID 5.6 MOHM SMD 1206 1%,Storable Product,,1,,Buy
+7103,[K300779] BUCHSENLEISTE 2x8,Storable Product,,1,,Buy
+7104,[K300780] DIN41612 H11 Messerleiste,Storable Product,,1,,Buy
+4901,[K150187] WE-TPC SMD-Speicherdrossel 10uH,Storable Product,,1,,Buy
+4908,[K150194] Varistor 300 VAC / 385 VDC SMD 3220,Storable Product,,1,,Buy
+4610,[K101073] WE-CMB Stromkompensierte Netzdrossel 10mH,Storable Product,,1,,Buy
+4611,[K101074] WE-CMB NiZn Stromkompensierte Netzdrossel 14uH,Storable Product,,1,,Buy
+8253,[K500442] Kreuz-Schraube M2.5x12,Storable Product,,1,,Buy
+9472,[K700466] Leiterplatte PMA14 Versorgungskarte,Storable Product,,1,,Buy
+4717,[K150003] WID 10 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4719,[K150005] WID 100 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4723,[K150009] Ker-Kond 100nF/50V 0805 10%,Storable Product,,1,,Buy
+4724,[K150010] Ker-Kond 10nF  0805 X7R 10% 50V,Storable Product,,1,,Buy
+4736,[K150022] WID 1.5 KOHM SMD 0805,Storable Product,,1,,Buy
+4743,"[K150029] Ker-Kond 10uF/50V X5R, 10%  1210 Tantalersatz",Storable Product,,1,,Buy
+4802,[K150088] WID 390 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4804,[K150090] WID 560 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4814,[K150100] WID 2.7 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4820,[K150106] Ker-Kond 10uF/10V  0805 Tantalersatz 10%,Storable Product,,1,,Buy
+4879,"[K150165] EMI Filterkette WE-CBF 1 KOHM, 100 MHz",Storable Product,,1,,Buy
+4891,[K150177] Stromkompensierter SMD Line Filter WE-SL2 51uH 1A,Storable Product,,1,,Buy
+4905,[K150191] WE-CBF SMD-Ferrit 0805 68R @ 1000 MHz,Storable Product,,1,,Buy
+4906,[K150192] Ker-Kond 1uF/50V 0805 X7R 10%,Storable Product,,1,,Buy
+5929,[K250005] LED grün  SMD 1206,Storable Product,,1,,Buy
+5941,[K250017] Diode BAS16   SOT23,Storable Product,,1,,Buy
+5975,[K250051] Schottky-Diode SK54  SMB,Storable Product,,1,,Buy
+5985,[K250061] MOSFET PMBF 170  Sot-23,Storable Product,,1,,Buy
+6070,"[K250145] Relais SMD 24 VDC, 200mW, 250 AC/220DC",Storable Product,,1,,Buy
+6091,[K250166] LM25011 Buck Regulator with Adjustable Current Limit,Storable Product,,1,,Buy
+4585,[K101047] SI-Halter 5x20mm FPC5,Storable Product,,1,,Buy
+4586,[K101048] Feinsicherung 4A träge  5x20mm,Storable Product,,1,,Buy
+4595,[K101057] Stromkompensierte Netzdrossel WE-LF 10mH 0.7A,Storable Product,,1,,Buy
+5873,[K200600] Schaltnetzteile 24V 0.9A 21.6W 85-264VAC,Storable Product,,1,,Buy
+7944,[K500068] MUTTER M2.5,Storable Product,,1,,Buy
+4737,[K150023] WID 4.7 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4843,[K150129] WID 82 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4887,[K150173] Ker-Kond 1nF/2kV 1206,Storable Product,,1,,Buy
+4888,[K150174] Ker-Kond 1nF/4kV 1825,Storable Product,,1,,Buy
+4902,[K150188] WE-TPC SMD-Speicherdrossel 15uH,Storable Product,,1,,Buy
+4903,[K150189] WE-LQS SMD Speicherdrossel 1uH,Storable Product,,1,,Buy
+4904,[K150190] WE-CBF SMD-Ferrit 0805 600R @ 100 MHz,Storable Product,,1,,Buy
+4907,[K150193] WID 5.6 MOHM SMD 1206 1%,Storable Product,,1,,Buy
+7103,[K300779] BUCHSENLEISTE 2x8,Storable Product,,1,,Buy
+7104,[K300780] DIN41612 H11 Messerleiste,Storable Product,,1,,Buy
+4901,[K150187] WE-TPC SMD-Speicherdrossel 10uH,Storable Product,,1,,Buy
+4908,[K150194] Varistor 300 VAC / 385 VDC SMD 3220,Storable Product,,1,,Buy
+4610,[K101073] WE-CMB Stromkompensierte Netzdrossel 10mH,Storable Product,,1,,Buy
+4611,[K101074] WE-CMB NiZn Stromkompensierte Netzdrossel 14uH,Storable Product,,1,,Buy
+8253,[K500442] Kreuz-Schraube M2.5x12,Storable Product,,1,,Buy
+9472,[K700466] Leiterplatte PMA14 Versorgungskarte,Storable Product,,1,,Buy
+4717,[K150003] WID 10 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4719,[K150005] WID 100 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4723,[K150009] Ker-Kond 100nF/50V 0805 10%,Storable Product,,1,,Buy
+4724,[K150010] Ker-Kond 10nF  0805 X7R 10% 50V,Storable Product,,1,,Buy
+4736,[K150022] WID 1.5 KOHM SMD 0805,Storable Product,,1,,Buy
+4743,"[K150029] Ker-Kond 10uF/50V X5R, 10%  1210 Tantalersatz",Storable Product,,1,,Buy
+4802,[K150088] WID 390 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4804,[K150090] WID 560 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4814,[K150100] WID 2.7 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4820,[K150106] Ker-Kond 10uF/10V  0805 Tantalersatz 10%,Storable Product,,1,,Buy
+4879,"[K150165] EMI Filterkette WE-CBF 1 KOHM, 100 MHz",Storable Product,,1,,Buy
+4891,[K150177] Stromkompensierter SMD Line Filter WE-SL2 51uH 1A,Storable Product,,1,,Buy
+4905,[K150191] WE-CBF SMD-Ferrit 0805 68R @ 1000 MHz,Storable Product,,1,,Buy
+4906,[K150192] Ker-Kond 1uF/50V 0805 X7R 10%,Storable Product,,1,,Buy
+5929,[K250005] LED grün  SMD 1206,Storable Product,,1,,Buy
+5941,[K250017] Diode BAS16   SOT23,Storable Product,,1,,Buy
+5975,[K250051] Schottky-Diode SK54  SMB,Storable Product,,1,,Buy
+5985,[K250061] MOSFET PMBF 170  Sot-23,Storable Product,,1,,Buy
+6070,"[K250145] Relais SMD 24 VDC, 200mW, 250 AC/220DC",Storable Product,,1,,Buy
+6091,[K250166] LM25011 Buck Regulator with Adjustable Current Limit,Storable Product,,1,,Buy
+4585,[K101047] SI-Halter 5x20mm FPC5,Storable Product,,1,,Buy
+4586,[K101048] Feinsicherung 4A träge  5x20mm,Storable Product,,1,,Buy
+4595,[K101057] Stromkompensierte Netzdrossel WE-LF 10mH 0.7A,Storable Product,,1,,Buy
+5873,[K200600] Schaltnetzteile 24V 0.9A 21.6W 85-264VAC,Storable Product,,1,,Buy
+7944,[K500068] MUTTER M2.5,Storable Product,,1,,Buy
+4737,[K150023] WID 4.7 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4843,[K150129] WID 82 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4887,[K150173] Ker-Kond 1nF/2kV 1206,Storable Product,,1,,Buy
+4888,[K150174] Ker-Kond 1nF/4kV 1825,Storable Product,,1,,Buy
+4902,[K150188] WE-TPC SMD-Speicherdrossel 15uH,Storable Product,,1,,Buy
+4903,[K150189] WE-LQS SMD Speicherdrossel 1uH,Storable Product,,1,,Buy
+4904,[K150190] WE-CBF SMD-Ferrit 0805 600R @ 100 MHz,Storable Product,,1,,Buy
+4907,[K150193] WID 5.6 MOHM SMD 1206 1%,Storable Product,,1,,Buy
+7103,[K300779] BUCHSENLEISTE 2x8,Storable Product,,1,,Buy
+7104,[K300780] DIN41612 H11 Messerleiste,Storable Product,,1,,Buy
+4901,[K150187] WE-TPC SMD-Speicherdrossel 10uH,Storable Product,,1,,Buy
+4908,[K150194] Varistor 300 VAC / 385 VDC SMD 3220,Storable Product,,1,,Buy
+4610,[K101073] WE-CMB Stromkompensierte Netzdrossel 10mH,Storable Product,,1,,Buy
+4611,[K101074] WE-CMB NiZn Stromkompensierte Netzdrossel 14uH,Storable Product,,1,,Buy
+8253,[K500442] Kreuz-Schraube M2.5x12,Storable Product,,1,,Buy
+9474,[K700468] Leiterplatte PMA14 I/O-Karte,Storable Product,,1,,Buy
+4717,[K150003] WID 10 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4842,[K150128] WID 43 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4884,[K150170] WID 1 KOHM SMD 1210 500mW 1%,Storable Product,,1,,Buy
+4885,[K150171] WID 39 KOHM SMD 1210 500mW 1%,Storable Product,,1,,Buy
+4723,[K150009] Ker-Kond 100nF/50V 0805 10%,Storable Product,,1,,Buy
+4726,[K150012] Ker-Kond 1nF/50V 10% 0805,Storable Product,,1,,Buy
+4820,[K150106] Ker-Kond 10uF/10V  0805 Tantalersatz 10%,Storable Product,,1,,Buy
+5937,[K250013] OP 2-fach   MCP 602-I/SN,Storable Product,,1,,Buy
+5941,[K250017] Diode BAS16   SOT23,Storable Product,,1,,Buy
+5985,[K250061] MOSFET PMBF 170  Sot-23,Storable Product,,1,,Buy
+6008,[K250084] Z-Diode 18V (Kopie),Storable Product,,1,,Buy
+6070,"[K250145] Relais SMD 24 VDC, 200mW, 250 AC/220DC",Storable Product,,1,,Buy
+6072,[K250147] Single Inverter AHC1G04 SOT-23-5,Storable Product,,1,,Buy
+6074,"[K250149] AD-Wandler 8 Kanal +MSPS SPI, QFN20",Storable Product,,1,,Buy
+6076,[K250151] 16bit GPIO Expander mit I2C-IC-Interface TSSOP-28,Storable Product,,1,,Buy
+6077,"[K250152] IC Interface Isolator 5 Kanal, 3 In, 2 Out SO-16",Storable Product,,1,,Buy
+6078,"[K250153] Isolierter DC/DC Wandler, 1W 3.3Vin 3.3Vout",Storable Product,,1,,Buy
+7017,[K300694] Messerleiste 32 pol  a+c,Storable Product,,1,,Buy
+7072,[K300748] BUCHSENLEISTE 2x10,Storable Product,,1,,Buy
+7944,[K500068] MUTTER M2.5,Storable Product,,1,,Buy
+8094,[K500265] KREUZ-SCHR. M2.5x10,Storable Product,,1,,Buy
+4744,[K150030] Ker-Kond 1uF/25V  0805 Tantalersatz,Storable Product,,1,,Buy
+4888,[K150174] Ker-Kond 1nF/4kV 1825,Storable Product,,1,,Buy
+6075,[K250150] TVS-Diode 300Vr 400W 0.8A DO-214AC,Storable Product,,1,,Buy
+8937,[K600578] Frontplatte PMA14,Storable Product,,1,,Buy
+5883,[K200608] TFT 5'' JHD 800x400 4wire RTP,Storable Product,,1,,Buy
+903,[0108200] PMA14 Versorgungsprint 85 - 230 VAC / 120 - 325 VDC,Storable Product,,1,,Manufacture
+907,[0108210] PMA14 CPU-Print,Storable Product,,1,,Manufacture
+908,[0108220] PMA14 I/O-Print (16/2),Storable Product,,15,,Manufacture
+9477,[K700471] Leiterplatte PMA14 Abschlussprint,Storable Product,,1,,Buy
+8934,"[K600575] Rändelschraube M2,5x11,3mm (VPE=100 Stk.)",Storable Product,,1,,Buy
+8933,"[K600574] Einpress-Gewindebuchse M2,5 vernickelt (VPE=100 Stk.)",Storable Product,,1,,Buy
+8936,"[K600577] Leiterplattenhalter, 4 x M2.5",Storable Product,,1,,Buy
+8935,[K600576] Leiterplattenabdeckung 100x160mm)  (LLG = 10 Stk.),Storable Product,,1,,Buy
+909,[0108230] PMA14 Backplane,Storable Product,,14,,Manufacture
+8024,[K500179] KREUZ-SCHR. M2.5x8,Storable Product,,1,,Buy
+8938,[K600579] Befestigungswelle PMA14,Storable Product,,1,,Buy
+8332,[K500520] Sicherungsscheiben für Wellen,Storable Product,,1,,Buy
+8331,[K500519] KREUZ-SCHR. M2.5x5,Storable Product,,1,,Buy
+4719,[K150005] WID 100 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4842,[K150128] WID 43 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+5995,[K250071] MOSFET BSS 138 geg.  Sot-23,Storable Product,,1,,Buy
+9473,[K700467] Leiterplatte PMA14 CPU-Karte,Storable Product,,1,,Buy
+4715,[K150001] WID 1 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4717,[K150003] WID 10 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4732,[K150018] WID 15 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4737,[K150023] WID 4.7 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4786,[K150072] WID 100 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4790,[K150076] WID 0 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4827,[K150113] WID 120 KOHM SMD 0805,Storable Product,,1,,Buy
+4830,[K150116] WID 27 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4836,[K150122] WID 56 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4838,[K150124] WID 220 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4844,[K150130] WID 750 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4870,[K150156] WID 33 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4872,[K150158] WID 590 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4723,[K150009] Ker-Kond 100nF/50V 0805 10%,Storable Product,,1,,Buy
+4724,[K150010] Ker-Kond 10nF  0805 X7R 10% 50V,Storable Product,,1,,Buy
+4726,[K150012] Ker-Kond 1nF/50V 10% 0805,Storable Product,,1,,Buy
+4744,[K150030] Ker-Kond 1uF/25V  0805 Tantalersatz,Storable Product,,1,,Buy
+4745,[K150031] Ker-Kond 22uF/16V  1210 Tantalersatz,Storable Product,,1,,Buy
+4788,[K150074] Ta-Elko 220uF/10V,Storable Product,,1,,Buy
+4832,[K150118] Ker-Kond 220nF/50V  0805,Storable Product,,1,,Buy
+4869,[K150155] Ker-Kond 15pF/50V  0805,Storable Product,,1,,Buy
+4873,[K150159] Drossel WE-TPC 3.3uH  1.95A,Storable Product,,1,,Buy
+4893,"[K150179] EMI Filterkette WE-CBF 2.2 KOHM, 100 MHz",Storable Product,,1,,Buy
+6009,[K250085] Diode 30BQ015PBF (Kopie),Storable Product,,1,,Buy
+6045,[K250120] I2C Bux Extender P82B715TD,Storable Product,,1,,Buy
+6061,"[K250136] BAT54S-TP Schottky-Barrier Doppel-Dioden, SOT-23",Storable Product,,1,,Buy
+6062,"[K250137] TPS3801K33, Supply Voltage Supverivsor, SOT-323-5",Storable Product,,1,,Buy
+6063,"[K250138] SN74HC125PWR, Puffer u. Leitungstreiber Quad Bus, TSSOP-14",Storable Product,,1,,Buy
+6064,"[K250139] SN74LVC1G07DBVR, Puffer u. Leitungstreiber Single w/O, SOT-23-5",Storable Product,,1,,Buy
+6065,"[K250140] TPS65100PWP, LCD-Treiber Triple-Out TFT LCD Supply w/VCOM Buffer HTSSOP-24",Storable Product,,1,,Buy
+7402,[K350006] ZIF_Stecker 4 pol SMD R=1.0mm,Storable Product,,1,,Buy
+7403,[K350007] ZIP_Stecker 50 pol SMD R=0.5mm,Storable Product,,1,,Buy
+7404,[K350008] Steckverbinder 80 Pol,Storable Product,,1,,Buy
+6745,[K300424] Stiftleiste 2 x 10 pol,Storable Product,,1,,Buy
+6007,[K250083] ESD-Suppressor 5V  WE-VE  0603 (Kopie),Storable Product,,1,,Buy
+6090,[K250165] PCF8523 Real-Time Clock (RTC) and calendar,Storable Product,,1,,Buy
+6541,[K300148] STIFTLEISTE 1x2,Storable Product,,1,,Buy
+6628,[K300307] STIFTLEISTE 2x8,Storable Product,,1,,Buy
+4871,[K150157] WID 511 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4898,[K150184] Batteriehalter SMD für CR1225,Storable Product,,1,,Buy
+6089,[K250164] QUARZ SMD 32.768 kHZ,Storable Product,,1,,Buy
+7139,[K300815] STIFTLEISTE 2X15,Storable Product,,1,,Buy
+4612,[K101075] Knopfzellen-Batterie Lithium 3 V 48 mAh,Storable Product,,1,,Buy
+6629,[K300308] STIFTLEISTE 2x4,Storable Product,,1,,Buy
+5874,[K200601] TQMa28-AE mit PRP und IEC61850 Lizenz,Storable Product,,1,,Buy
+6043,[K250118.1] LED Driver Diodes Incorporated BCR401U,Storable Product,,1,,Buy
+4719,[K150005] WID 100 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4842,[K150128] WID 43 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+5995,[K250071] MOSFET BSS 138 geg.  Sot-23,Storable Product,,1,,Buy
+9473,[K700467] Leiterplatte PMA14 CPU-Karte,Storable Product,,1,,Buy
+4715,[K150001] WID 1 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4717,[K150003] WID 10 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4732,[K150018] WID 15 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4737,[K150023] WID 4.7 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4786,[K150072] WID 100 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4790,[K150076] WID 0 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4827,[K150113] WID 120 KOHM SMD 0805,Storable Product,,1,,Buy
+4830,[K150116] WID 27 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4836,[K150122] WID 56 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4838,[K150124] WID 220 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4844,[K150130] WID 750 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4870,[K150156] WID 33 OHM SMD 0805 1%,Storable Product,,1,,Buy
+4872,[K150158] WID 590 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4723,[K150009] Ker-Kond 100nF/50V 0805 10%,Storable Product,,1,,Buy
+4724,[K150010] Ker-Kond 10nF  0805 X7R 10% 50V,Storable Product,,1,,Buy
+4726,[K150012] Ker-Kond 1nF/50V 10% 0805,Storable Product,,1,,Buy
+4744,[K150030] Ker-Kond 1uF/25V  0805 Tantalersatz,Storable Product,,1,,Buy
+4745,[K150031] Ker-Kond 22uF/16V  1210 Tantalersatz,Storable Product,,1,,Buy
+4788,[K150074] Ta-Elko 220uF/10V,Storable Product,,1,,Buy
+4832,[K150118] Ker-Kond 220nF/50V  0805,Storable Product,,1,,Buy
+4869,[K150155] Ker-Kond 15pF/50V  0805,Storable Product,,1,,Buy
+4873,[K150159] Drossel WE-TPC 3.3uH  1.95A,Storable Product,,1,,Buy
+4893,"[K150179] EMI Filterkette WE-CBF 2.2 KOHM, 100 MHz",Storable Product,,1,,Buy
+6009,[K250085] Diode 30BQ015PBF (Kopie),Storable Product,,1,,Buy
+6045,[K250120] I2C Bux Extender P82B715TD,Storable Product,,1,,Buy
+6061,"[K250136] BAT54S-TP Schottky-Barrier Doppel-Dioden, SOT-23",Storable Product,,1,,Buy
+6062,"[K250137] TPS3801K33, Supply Voltage Supverivsor, SOT-323-5",Storable Product,,1,,Buy
+6063,"[K250138] SN74HC125PWR, Puffer u. Leitungstreiber Quad Bus, TSSOP-14",Storable Product,,1,,Buy
+6064,"[K250139] SN74LVC1G07DBVR, Puffer u. Leitungstreiber Single w/O, SOT-23-5",Storable Product,,1,,Buy
+6065,"[K250140] TPS65100PWP, LCD-Treiber Triple-Out TFT LCD Supply w/VCOM Buffer HTSSOP-24",Storable Product,,1,,Buy
+7402,[K350006] ZIF_Stecker 4 pol SMD R=1.0mm,Storable Product,,1,,Buy
+7403,[K350007] ZIP_Stecker 50 pol SMD R=0.5mm,Storable Product,,1,,Buy
+7404,[K350008] Steckverbinder 80 Pol,Storable Product,,1,,Buy
+6745,[K300424] Stiftleiste 2 x 10 pol,Storable Product,,1,,Buy
+6007,[K250083] ESD-Suppressor 5V  WE-VE  0603 (Kopie),Storable Product,,1,,Buy
+6090,[K250165] PCF8523 Real-Time Clock (RTC) and calendar,Storable Product,,1,,Buy
+6541,[K300148] STIFTLEISTE 1x2,Storable Product,,1,,Buy
+6628,[K300307] STIFTLEISTE 2x8,Storable Product,,1,,Buy
+4871,[K150157] WID 511 KOHM SMD 0805 1%,Storable Product,,1,,Buy
+4898,[K150184] Batteriehalter SMD für CR1225,Storable Product,,1,,Buy
+6089,[K250164] QUARZ SMD 32.768 kHZ,Storable Product,,1,,Buy
+7139,[K300815] STIFTLEISTE 2X15,Storable Product,,1,,Buy
+4612,[K101075] Knopfzellen-Batterie Lithium 3 V 48 mAh,Storable Product,,1,,Buy
+6629,[K300308] STIFTLEISTE 2x4,Storable Product,,1,,Buy
+5874,[K200601] TQMa28-AE mit PRP und IEC61850 Lizenz,Storable Product,,1,,Buy
+6043,[K250118.1] LED Driver Diodes Incorporated BCR401U,Storable Product,,1,,Buy
+890,[0108110] Meldeeinheit PMA14,Storable Product,,30,,Manufacture
