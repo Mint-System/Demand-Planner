@@ -5,9 +5,9 @@
         <field name="model">demand.planner</field>
         <field name="arch" type="xml">
             <tree decoration-danger="proposed_order_date &lt; now" create="0">
-                <field name="product_id"/>
+                <field name="product_id" widget="many2one"/>
                 <field name="proposed_order_date"/>
-                <field name="delivery_order"/>
+                <field name="delivery_order" widget="many2one"/>
                 <field name="delivery_order_date"/>
                 <field name="qty"/>
                 <button name="action_replenish" string="Replenish" type="object" class="o_replenish_buttons"

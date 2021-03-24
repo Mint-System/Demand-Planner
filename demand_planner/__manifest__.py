@@ -31,5 +31,4 @@
         "static/src/xml/listview_refresh.xml",
     ],
     'installable': True,
-    'application': True,
 }

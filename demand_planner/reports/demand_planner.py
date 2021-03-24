@@ -37,16 +37,10 @@ class DemandPlanner(models.Model):
             product = self.env['product.product'].browse(int(product_id))
         else:
             product = bom.product_id or bom.product_tmpl_id.product_variant_id
-        lines = {
-            'product_id': product.id,
-            'bom': bom.id,
-            'bom_qty': bom_quantity,
-            'bom_prod_name': product.display_name,
-            'delay': product.produce_delay,
-            'level': level or 0,
-            'qty_available': product.qty_available
-        }
-        lines['components'] = self._get_bom_lines(bom, bom_quantity, product, line_id, level)
+        lines = {'product_id': product.id, 'bom': bom.id, 'bom_qty': bom_quantity,
+                 'bom_prod_name': product.display_name, 'delay': product.produce_delay, 'level': level or 0,
+                 'qty_available': product.qty_available,
+                 'components': self._get_bom_lines(bom, bom_quantity, product, line_id, level)}
         return lines
 
     def _get_bom_lines(self, bom, bom_quantity, product, line_id, level):
@@ -79,10 +73,9 @@ class DemandPlanner(models.Model):
         def get_sub_lines(bom, product_id, line_qty, line_id, level):
             data = self._get_bom(bom=bom, product_id=product_id.id, line_qty=line_qty, line_id=line_id, level=level)
             bom_lines = data['components']
-            lines = {}
+            parent_line_delay = (lines.get(data['product_id'], data))['delay']
             for bom_line in bom_lines:
                 line_product_id = bom_line['prod_id']
-                # TOCHECK: what happends if the same product is used inside sub BoMs ?
                 if not lines.get(line_product_id):
                     lines[line_product_id] = {
                         'name': bom_line['prod_name'],
@@ -92,15 +85,24 @@ class DemandPlanner(models.Model):
                         'level': bom_line['level'],
                         'child_bom': bom_line['child_bom'],
                         'prod_id': bom_line['prod_id'],
-                        'delay': bom_line['delay'],
+                        'delay': parent_line_delay + bom_line['delay'],
                         'qty_available': bom_line['qty_available'],
                         'parent_qty': data['bom_qty'],
                     }
+                else:
+                    # check if same product is used inside sub BoMs then we sum up the required quantities
+                    # also, we consider maximum delay based on it's parent product delay for repeated product
+                    if lines[line_product_id]['parent_id'] != bom_line['parent_id']:
+                        lines[line_product_id]['quantity'] += bom_line['prod_qty']
+                        delay = lines.get(bom_line['parent_id'], {}).get('delay', 0) + bom_line['delay']
+                        if lines[line_product_id]['delay'] < delay:
+                            lines[line_product_id]['delay'] = delay
                 if bom_line['child_bom'] and (unfolded or bom_line['child_bom'] in child_bom_ids):
                     line = self.env['mrp.bom.line'].browse(bom_line['line_id'])
                     lines.update(get_sub_lines(line.child_bom_id, line.product_id, bom_line['prod_qty'], line, level + 1))
             return lines
 
+        lines = {}
         bom = self.env['mrp.bom'].browse(bom_id)
         product = bom.product_tmpl_id.product_variant_id
         data = self._get_bom(bom=bom, product_id=product.id, line_qty=qty)
@@ -132,23 +134,26 @@ class DemandPlanner(models.Model):
         products = {}  # To store the products BOM structure [ Bike, Table ]
         # Assuming we have to process all categories
         domain = []
+        product_category_ids = []
         ICP = self.env['ir.config_parameter'].sudo()
         # Check for option of theoritical order in settings
         is_calculate_theoretical_order = ICP.get_param('demand_planner.is_calculate_theoretical_order', 0)
         if is_calculate_theoretical_order:
             product_category_id = int(ICP.get_param('demand_planner.product_category_id', 0))
-            # Set the domain for child categories 
+            # Set the domain for child categories
             if product_category_id:
                 domain = [('id', 'child_of', product_category_id)]
-        product_category_ids = self.env['product.category'].search(domain).ids
-
+            product_category_ids = self.env['product.category'].search(domain).ids
         for delivery in deliveries:
             sale = delivery.sale_id
             delivery_date = sale.commitment_date or delivery.scheduled_date
             for saleline in delivery.sale_id.order_line:
                 main_product = saleline.product_id
+                to_calculate_product = True
+                if is_calculate_theoretical_order:
+                    to_calculate_product = True if main_product.categ_id.id in product_category_ids else False
                 # Check if product in order_line belongs to categories computed
-                if main_product.categ_id.id in product_category_ids:
+                if to_calculate_product:
                     # Check for bom, if multiple found take the latest created bom
                     bom = main_product.bom_ids and main_product.bom_ids[-1]
                     if bom:
@@ -170,13 +175,13 @@ class DemandPlanner(models.Model):
     def _get_forecasted_stock(self, product_id, date, line_data):
         # Find the product and date in forecast
         forecast_report = self.env['report.stock.quantity'].read_group(
-                [('date', '=', date),
-                 ('product_id', '=', product_id),
-                 ('state', '=', 'forecast'),
-                 ('company_id', '=', self.env.company.id)],
-                ['product_qty', 'date', 'product_id', 'state'],
-                ['date:day', 'product_id', 'state'],
-                lazy=False)
+            [('date', '=', date),
+             ('product_id', '=', product_id),
+             ('state', '=', 'forecast'),
+             ('company_id', '=', self.env.company.id)],
+             ['product_qty'],
+             ['date:day'],
+            lazy=False)
         # Return forecasted quantity or None [ None -> Use Stock Quantity or 0]
         forecasted_qty = forecast_report[0]['product_qty'] if forecast_report else 0
         return {'forecasted_qty': forecasted_qty, 'qty_available': line_data['qty_available']}
@@ -200,20 +205,9 @@ class DemandPlanner(models.Model):
                 'delivery_order_date': delivery['delivery_date'],
                 'qty': sale_qty,
             })
-            main_bom_delay = data['delay']
             bom_lines_dict = data['lines']
             for bom_product_id, values in bom_lines_dict.items():
-                line_level = values.get('level')
-                line_delay = main_bom_delay + values['delay']
-                parent_id = values.get('parent_id')
-                # iterated through all the parents(except main) of line and find the total delay to produce the product
-                while line_level != 1:
-                    parent_line = bom_lines_dict.get(parent_id, {})
-                    parent_delay = parent_line.get('delay', 0)
-                    line_delay += parent_delay
-                    parent_id = parent_line.get('parent_id')
-                    line_level -= 1
-                line_proposed_date = delivery['delivery_date'] - timedelta(line_delay)
+                line_proposed_date = delivery['delivery_date'] - timedelta(values['delay'])
                 required_qty = sale_qty * values['quantity']
                 stock_on_hand_data = self._get_forecasted_stock(values['prod_id'], line_proposed_date, values)
                 forecasted_qty = stock_on_hand_data['forecasted_qty'] or stock_on_hand_data['qty_available']
