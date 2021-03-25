@@ -10,19 +10,19 @@ The test data set contains a manufacturing setup for two products. These product
 
 This is fictional product for testing puproses only.
 
-![](test_data/Mountain%20Bike/Mountain%20Bike.png)
+![](demand_planner_test_data/data/mountain_bike/example.png)
 
 **BoM**
 
 This is the bill of material with lead times:
 
-![](test_data/Mountain%20Bike/BoM.png)
+![](demand_planner_test_data/data/mountain_bike/BoM.png)
 
 ### Meldeeinheit PMA14
 
 This is a real product from the customer.
 
-![](test_data/Meldeeinheit%20PMA14/BoM.png)
+![](demand_planner_test_data/data/meldeeinheit_pma14/BoM.png)
 
 ## Import Sequence
 
