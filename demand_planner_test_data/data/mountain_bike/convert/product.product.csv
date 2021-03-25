@@ -1,31 +1,31 @@
-"name","standard_price","produce_delay","sale_delay","route_ids/id"
-"Chain","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Chain Rings","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Chain Stay","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Cogset","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Crank Arm","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Down Tube","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Fork","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Frame","0.0","5.0","0.0","mrp.route_warehouse0_manufacture"
-"Front Brakes","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Front Derailleur","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Front Set","0.0","2.0","0.0","mrp.route_warehouse0_manufacture"
-"Handlebar Grip","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Head Tube","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Hub","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Mountain Bike","0.0","4.0","0.0","mrp.route_warehouse0_manufacture"
-"Pedal","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Rear Brakes","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Rear Derailleur","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Rim","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Saddle","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Saddle Set","0.0","1.0","0.0","mrp.route_warehouse0_manufacture"
-"Seat Post","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Seat Stay","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Seat Tube","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Shock Absorber","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Spoke","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Tire","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Top Tube","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Valve","0.0","0.0","0.0","purchase_stock.route_warehouse0_buy"
-"Wheel","0.0","3.0","0.0","mrp.route_warehouse0_manufacture"
+id,name,standard_price,produce_delay,sale_delay,route_ids/id
+product_mtb_0,Chain,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_1,Chain Rings,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_2,Chain Stay,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_3,Cogset,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_4,Crank Arm,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_5,Down Tube,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_6,Fork,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_7,Frame,0,5,0,mrp.route_warehouse0_manufacture
+product_mtb_8,Front Brakes,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_9,Front Derailleur,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_10,Front Set,0,2,0,mrp.route_warehouse0_manufacture
+product_mtb_11,Handlebar Grip,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_12,Head Tube,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_13,Hub,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_14,Mountain Bike,0,4,0,mrp.route_warehouse0_manufacture
+product_mtb_15,Pedal,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_16,Rear Brakes,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_17,Rear Derailleur,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_18,Rim,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_19,Saddle,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_20,Saddle Set,0,1,0,mrp.route_warehouse0_manufacture
+product_mtb_21,Seat Post,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_22,Seat Stay,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_23,Seat Tube,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_24,Shock Absorber,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_25,Spoke,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_26,Tire,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_27,Top Tube,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_28,Valve,0,0,0,purchase_stock.route_warehouse0_buy
+product_mtb_29,Wheel,0,3,0,mrp.route_warehouse0_manufacture

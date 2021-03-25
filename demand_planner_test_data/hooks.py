@@ -6,7 +6,9 @@ def import_csv_data(cr, registry):
     filenames = [
         'data/mountain_bike/convert/res.partner.csv',
         'data/mountain_bike/convert/product.product.csv',
-        'data/mountain_bike/convert/product.supplierinfo.csv'
+        'data/mountain_bike/convert/product.supplierinfo.csv',
+        # 'data/mountain_bike/convert/mrp.bom.csv',
+        # 'data/mountain_bike/convert/mrp.bom.line.csv'
     ]
     for filename in filenames:
         convert_file(
