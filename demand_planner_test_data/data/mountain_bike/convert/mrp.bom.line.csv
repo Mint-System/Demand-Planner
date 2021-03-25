@@ -1,30 +1,59 @@
-"bom_id","bom_line_ids/product_id","bom_line_ids/product_qty"
-__export__.mrp_bom_9_2891e95f,Frame,1
-__export__.mrp_bom_9_2891e95f,Wheel,2
-__export__.mrp_bom_9_2891e95f,Saddle Set,1
-__export__.mrp_bom_9_2891e95f,Front Set,1
-__export__.mrp_bom_9_2891e95f,Pedal,2
-__export__.mrp_bom_9_2891e95f,Crank Arm,1
-__export__.mrp_bom_9_2891e95f,Rear Brakes,1
-__export__.mrp_bom_9_2891e95f,Cogset,1
-__export__.mrp_bom_9_2891e95f,Rear Derailleur,1
-__export__.mrp_bom_9_2891e95f,Front Derailleur,1
-__export__.mrp_bom_9_2891e95f,Chain,1
-__export__.mrp_bom_9_2891e95f,Chain Rings,1
-__export__.mrp_bom_10_bf96812f,Tire,1
-__export__.mrp_bom_10_bf96812f,Rim,1
-__export__.mrp_bom_10_bf96812f,Hub,1
-__export__.mrp_bom_10_bf96812f,Spoke,16
-__export__.mrp_bom_10_bf96812f,Valve,1
-__export__.mrp_bom_11_08734201,Top Tube,1
-__export__.mrp_bom_11_08734201,Down Tube,1
-__export__.mrp_bom_11_08734201,Seat Tube,1
-__export__.mrp_bom_11_08734201,Seat Stay,1
-__export__.mrp_bom_11_08734201,Chain Stay,1
-__export__.mrp_bom_12_e622e9dc,Saddle,1
-__export__.mrp_bom_12_e622e9dc,Seat Post,1
-__export__.mrp_bom_13_4fd04e81,Handlebar Grip,2
-__export__.mrp_bom_13_4fd04e82,Head Tube,1
-__export__.mrp_bom_13_4fd04e83,Shock Absorber,2
-__export__.mrp_bom_13_4fd04e84,Fork,1
-__export__.mrp_bom_13_4fd04e85,Front Brakes,1
+"id","bom_id/id","product_id/id","product_qty"
+"demand_planner_test_data.mrp_bom_line_30_83104fef","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_7","1.0"
+"demand_planner_test_data.mrp_bom_line_31_e9416990","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_29","2.0"
+"demand_planner_test_data.mrp_bom_line_32_76780790","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_20","1.0"
+"demand_planner_test_data.mrp_bom_line_33_7c1a7dad","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_10","1.0"
+"demand_planner_test_data.mrp_bom_line_34_983d8d73","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_15","2.0"
+"demand_planner_test_data.mrp_bom_line_35_217d9987","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_4","1.0"
+"demand_planner_test_data.mrp_bom_line_36_4159971f","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_16","1.0"
+"demand_planner_test_data.mrp_bom_line_37_ed412d46","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_3","1.0"
+"demand_planner_test_data.mrp_bom_line_38_e2f76fa9","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_17","1.0"
+"demand_planner_test_data.mrp_bom_line_39_e07d188f","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_9","1.0"
+"demand_planner_test_data.mrp_bom_line_40_d9d90864","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_0","1.0"
+"demand_planner_test_data.mrp_bom_line_41_1e79e5a8","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_1","1.0"
+"demand_planner_test_data.mrp_bom_line_42_f30cc0a1","demand_planner_test_data.mrp_bom_10_bf96812f","demand_planner_test_data.product_mtb_26","1.0"
+"demand_planner_test_data.mrp_bom_line_43_2a2d4405","demand_planner_test_data.mrp_bom_10_bf96812f","demand_planner_test_data.product_mtb_18","1.0"
+"demand_planner_test_data.mrp_bom_line_44_da112d91","demand_planner_test_data.mrp_bom_10_bf96812f","demand_planner_test_data.product_mtb_13","1.0"
+"demand_planner_test_data.mrp_bom_line_45_d8b9d773","demand_planner_test_data.mrp_bom_10_bf96812f","demand_planner_test_data.product_mtb_25","16.0"
+"demand_planner_test_data.mrp_bom_line_46_46bf62b4","demand_planner_test_data.mrp_bom_10_bf96812f","demand_planner_test_data.product_mtb_28","1.0"
+"demand_planner_test_data.mrp_bom_line_47_b0f5c723","demand_planner_test_data.mrp_bom_11_08734201","demand_planner_test_data.product_mtb_27","1.0"
+"demand_planner_test_data.mrp_bom_line_48_9a7a3216","demand_planner_test_data.mrp_bom_11_08734201","demand_planner_test_data.product_mtb_5","1.0"
+"demand_planner_test_data.mrp_bom_line_49_91e623b2","demand_planner_test_data.mrp_bom_11_08734201","demand_planner_test_data.product_mtb_23","1.0"
+"demand_planner_test_data.mrp_bom_line_50_437a295b","demand_planner_test_data.mrp_bom_11_08734201","demand_planner_test_data.product_mtb_22","1.0"
+"demand_planner_test_data.mrp_bom_line_51_2cd72bc7","demand_planner_test_data.mrp_bom_11_08734201","demand_planner_test_data.product_mtb_2","1.0"
+"demand_planner_test_data.mrp_bom_line_52_905532d5","demand_planner_test_data.mrp_bom_12_e622e9dc","demand_planner_test_data.product_mtb_19","1.0"
+"demand_planner_test_data.mrp_bom_line_53_9d11e0f2","demand_planner_test_data.mrp_bom_12_e622e9dc","demand_planner_test_data.product_mtb_21","1.0"
+"demand_planner_test_data.mrp_bom_line_54_fe652dfd","demand_planner_test_data.mrp_bom_13_4fd04e81","demand_planner_test_data.product_mtb_11","2.0"
+"demand_planner_test_data.mrp_bom_line_55_f918de18","demand_planner_test_data.mrp_bom_13_4fd04e81","demand_planner_test_data.product_mtb_12","1.0"
+"demand_planner_test_data.mrp_bom_line_56_1edbc473","demand_planner_test_data.mrp_bom_13_4fd04e81","demand_planner_test_data.product_mtb_24","2.0"
+"demand_planner_test_data.mrp_bom_line_57_6caf5f89","demand_planner_test_data.mrp_bom_13_4fd04e81","demand_planner_test_data.product_mtb_6","1.0"
+"demand_planner_test_data.mrp_bom_line_58_d38a1d1b","demand_planner_test_data.mrp_bom_13_4fd04e81","demand_planner_test_data.product_mtb_8","1.0"
+"demand_planner_test_data.mrp_bom_line_30_83104fef","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_7","1.0"
+"demand_planner_test_data.mrp_bom_line_31_e9416990","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_29","2.0"
+"demand_planner_test_data.mrp_bom_line_32_76780790","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_20","1.0"
+"demand_planner_test_data.mrp_bom_line_33_7c1a7dad","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_10","1.0"
+"demand_planner_test_data.mrp_bom_line_34_983d8d73","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_15","2.0"
+"demand_planner_test_data.mrp_bom_line_35_217d9987","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_4","1.0"
+"demand_planner_test_data.mrp_bom_line_36_4159971f","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_16","1.0"
+"demand_planner_test_data.mrp_bom_line_37_ed412d46","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_3","1.0"
+"demand_planner_test_data.mrp_bom_line_38_e2f76fa9","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_17","1.0"
+"demand_planner_test_data.mrp_bom_line_39_e07d188f","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_9","1.0"
+"demand_planner_test_data.mrp_bom_line_40_d9d90864","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_0","1.0"
+"demand_planner_test_data.mrp_bom_line_41_1e79e5a8","demand_planner_test_data.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_1","1.0"
+"demand_planner_test_data.mrp_bom_line_42_f30cc0a1","demand_planner_test_data.mrp_bom_10_bf96812f","demand_planner_test_data.product_mtb_26","1.0"
+"demand_planner_test_data.mrp_bom_line_43_2a2d4405","demand_planner_test_data.mrp_bom_10_bf96812f","demand_planner_test_data.product_mtb_18","1.0"
+"demand_planner_test_data.mrp_bom_line_44_da112d91","demand_planner_test_data.mrp_bom_10_bf96812f","demand_planner_test_data.product_mtb_13","1.0"
+"demand_planner_test_data.mrp_bom_line_45_d8b9d773","demand_planner_test_data.mrp_bom_10_bf96812f","demand_planner_test_data.product_mtb_25","16.0"
+"demand_planner_test_data.mrp_bom_line_46_46bf62b4","demand_planner_test_data.mrp_bom_10_bf96812f","demand_planner_test_data.product_mtb_28","1.0"
+"demand_planner_test_data.mrp_bom_line_47_b0f5c723","demand_planner_test_data.mrp_bom_11_08734201","demand_planner_test_data.product_mtb_27","1.0"
+"demand_planner_test_data.mrp_bom_line_48_9a7a3216","demand_planner_test_data.mrp_bom_11_08734201","demand_planner_test_data.product_mtb_5","1.0"
+"demand_planner_test_data.mrp_bom_line_49_91e623b2","demand_planner_test_data.mrp_bom_11_08734201","demand_planner_test_data.product_mtb_23","1.0"
+"demand_planner_test_data.mrp_bom_line_50_437a295b","demand_planner_test_data.mrp_bom_11_08734201","demand_planner_test_data.product_mtb_22","1.0"
+"demand_planner_test_data.mrp_bom_line_51_2cd72bc7","demand_planner_test_data.mrp_bom_11_08734201","demand_planner_test_data.product_mtb_2","1.0"
+"demand_planner_test_data.mrp_bom_line_52_905532d5","demand_planner_test_data.mrp_bom_12_e622e9dc","demand_planner_test_data.product_mtb_19","1.0"
+"demand_planner_test_data.mrp_bom_line_53_9d11e0f2","demand_planner_test_data.mrp_bom_12_e622e9dc","demand_planner_test_data.product_mtb_21","1.0"
+"demand_planner_test_data.mrp_bom_line_54_fe652dfd","demand_planner_test_data.mrp_bom_13_4fd04e81","demand_planner_test_data.product_mtb_11","2.0"
+"demand_planner_test_data.mrp_bom_line_55_f918de18","demand_planner_test_data.mrp_bom_13_4fd04e81","demand_planner_test_data.product_mtb_12","1.0"
+"demand_planner_test_data.mrp_bom_line_56_1edbc473","demand_planner_test_data.mrp_bom_13_4fd04e81","demand_planner_test_data.product_mtb_24","2.0"
+"demand_planner_test_data.mrp_bom_line_57_6caf5f89","demand_planner_test_data.mrp_bom_13_4fd04e81","demand_planner_test_data.product_mtb_6","1.0"
+"demand_planner_test_data.mrp_bom_line_58_d38a1d1b","demand_planner_test_data.mrp_bom_13_4fd04e81","demand_planner_test_data.product_mtb_8","1.0"

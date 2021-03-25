@@ -1,6 +1,6 @@
-"id","product_tmpl_id/id","product_qty","type",
-"__export__.mrp_bom_9_2891e95f","demand_planner_test_data.product_mtb_14_product_template","1.0","Manufacture this product"
-"__export__.mrp_bom_10_bf96812f","demand_planner_test_data.product_mtb_29_product_template","1.0","Manufacture this product"
-"__export__.mrp_bom_11_08734201","demand_planner_test_data.product_mtb_7_product_template","1.0","Manufacture this product"
-"__export__.mrp_bom_12_e622e9dc","demand_planner_test_data.product_mtb_20_product_template","1.0","Manufacture this product"
-"__export__.mrp_bom_13_4fd04e81","demand_planner_test_data.product_mtb_10_product_template","1.0","Manufacture this product"
+id,product_tmpl_id/id,product_qty,type
+demand_planner_test_data.mrp_bom_9_2891e95f,demand_planner_test_data.product_mtb_14_product_template,1,Manufacture this product
+demand_planner_test_data.mrp_bom_10_bf96812f,demand_planner_test_data.product_mtb_29_product_template,1,Manufacture this product
+demand_planner_test_data.mrp_bom_11_08734201,demand_planner_test_data.product_mtb_7_product_template,1,Manufacture this product
+demand_planner_test_data.mrp_bom_12_e622e9dc,demand_planner_test_data.product_mtb_20_product_template,1,Manufacture this product
+demand_planner_test_data.mrp_bom_13_4fd04e81,demand_planner_test_data.product_mtb_10_product_template,1,Manufacture this product

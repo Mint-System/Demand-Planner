@@ -19,6 +19,11 @@
     # any module necessary for this one to work correctly
     'depends': ['demand_planner'],
 
-    # Load csv data once module is installed
-    'post_init_hook': 'post_init',
+    'data': [
+        'data/mountain_bike/convert/res.partner.csv',
+        'data/mountain_bike/convert/product.product.csv',
+        'data/mountain_bike/convert/product.supplierinfo.csv',
+        'data/mountain_bike/convert/mrp.bom.csv',
+        'data/mountain_bike/convert/mrp.bom.line.csv'
+    ],
 }
