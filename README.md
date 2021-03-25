@@ -40,37 +40,47 @@ When exporting models use these fields and save as csv file.
 **product.product**
 
 ```
-Name
-Product Type
-Cost
-Manufacturing Lead Time
-Customer Lead Time
-Routes
+id
+name
+standard_price
+produce_delay
+sale_delay
+route_ids/id
 ```
 
 **mrp.bom**
 
 ```
-Product
-Quantity
-BoM Type
-BoM Lines/Component
-BoM Lines/Quantity
+id
+product_tmpl_id/id
+product_qty
+type
+```
+
+**mrp.bom.line**
+
+```
+id
+bom_id/id
+product_id/id
+product_qty
 ```
 
 **product.supplierinfo**
 
 ```
-Vendor
-Product Template
-Quantity
-Price
-Delivery Lead Time
+id
+name/id
+product_tmpl_id/id
+min_qty
+price
+delay
 ```
 
 **res.partner**
 
 ```
-Name
-Is a Company
+id
+name
+is_company
 ```

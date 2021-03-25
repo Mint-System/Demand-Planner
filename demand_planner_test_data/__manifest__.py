@@ -20,10 +20,10 @@
     'depends': ['demand_planner'],
 
     'data': [
-        'data/mountain_bike/convert/res.partner.csv',
-        'data/mountain_bike/convert/product.product.csv',
-        'data/mountain_bike/convert/product.supplierinfo.csv',
-        'data/mountain_bike/convert/mrp.bom.csv',
-        'data/mountain_bike/convert/mrp.bom.line.csv'
+        'data/mountain_bike/res.partner.csv',
+        'data/mountain_bike/product.product.csv',
+        'data/mountain_bike/product.supplierinfo.csv',
+        'data/mountain_bike/mrp.bom.csv',
+        'data/mountain_bike/mrp.bom.line.csv'
     ],
 }

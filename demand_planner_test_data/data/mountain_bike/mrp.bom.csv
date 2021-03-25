@@ -1,30 +1,6 @@
-"External ID","Product","Quantity","BoM Type","BoM Lines/Component","BoM Lines/Quantity"
-"__export__.mrp_bom_9_2891e95f","Mountain Bike","1.0","Manufacture this product","Frame","1.0"
-"","","","","Wheel","2.0"
-"","","","","Saddle Set","1.0"
-"","","","","Front Set","1.0"
-"","","","","Pedal","2.0"
-"","","","","Crank Arm","1.0"
-"","","","","Rear Brakes","1.0"
-"","","","","Cogset","1.0"
-"","","","","Rear Derailleur","1.0"
-"","","","","Front Derailleur","1.0"
-"","","","","Chain","1.0"
-"","","","","Chain Rings","1.0"
-"__export__.mrp_bom_10_bf96812f","Wheel","1.0","Manufacture this product","Tire","1.0"
-"","","","","Rim","1.0"
-"","","","","Hub","1.0"
-"","","","","Spoke","16.0"
-"","","","","Valve","1.0"
-"__export__.mrp_bom_11_08734201","Frame","1.0","Manufacture this product","Top Tube","1.0"
-"","","","","Down Tube","1.0"
-"","","","","Seat Tube","1.0"
-"","","","","Seat Stay","1.0"
-"","","","","Chain Stay","1.0"
-"__export__.mrp_bom_12_e622e9dc","Saddle Set","1.0","Manufacture this product","Saddle","1.0"
-"","","","","Seat Post","1.0"
-"__export__.mrp_bom_13_4fd04e81","Front Set","1.0","Manufacture this product","Handlebar Grip","2.0"
-"","","","","Head Tube","1.0"
-"","","","","Shock Absorber","2.0"
-"","","","","Fork","1.0"
-"","","","","Front Brakes","1.0"
+id,product_tmpl_id/id,product_qty,type
+demand_planner_test_data.mrp_bom_9_2891e95f,demand_planner_test_data.product_mtb_14_product_template,1,Manufacture this product
+demand_planner_test_data.mrp_bom_10_bf96812f,demand_planner_test_data.product_mtb_29_product_template,1,Manufacture this product
+demand_planner_test_data.mrp_bom_11_08734201,demand_planner_test_data.product_mtb_7_product_template,1,Manufacture this product
+demand_planner_test_data.mrp_bom_12_e622e9dc,demand_planner_test_data.product_mtb_20_product_template,1,Manufacture this product
+demand_planner_test_data.mrp_bom_13_4fd04e81,demand_planner_test_data.product_mtb_10_product_template,1,Manufacture this product
