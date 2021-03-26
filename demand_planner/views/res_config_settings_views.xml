@@ -15,9 +15,9 @@
                             <field name="is_calculate_theoretical_order"/>
                         </div>
                         <div class="o_setting_right_pane">
-                            <span class="o_form_label">Calculate Theoretical order</span>
+                            <span class="o_form_label">Filter Product Category</span>
                             <div class="text-muted">
-                                Filter Product Category
+                                Calculate demand only for products assigned to this category
                             </div>
                             <div class="content-group" attrs="{'invisible': [('is_calculate_theoretical_order', '=', False)]}">
                                 <div class="mt16 row">
