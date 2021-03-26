@@ -27,7 +27,7 @@
         </field>
     </record>
     <record id="action_demand_planner" model="ir.actions.act_window">
-        <field name="name">Demand Planner window</field>
+        <field name="name">Demand Planner</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">demand.planner</field>
         <field name="view_mode">tree</field>

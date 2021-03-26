@@ -17,9 +17,9 @@
                         <div class="o_setting_right_pane">
                             <span class="o_form_label">Calculate Theoretical order</span>
                             <div class="text-muted">
-                                Description here.
+                                Filter Product Category
                             </div>
-                            <div class="content-group">
+                            <div class="content-group" attrs="{'invisible': [('is_calculate_theoretical_order', '=', False)]}">
                                 <div class="mt16 row">
                                     <label for="product_category_id" string="Product Category"
                                            class="col-3 col-lg-3 o_light_label"/>
