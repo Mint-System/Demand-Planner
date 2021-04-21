@@ -24,6 +24,11 @@
         'data/mountain_bike/product.product.csv',
         'data/mountain_bike/product.supplierinfo.csv',
         'data/mountain_bike/mrp.bom.csv',
-        'data/mountain_bike/mrp.bom.line.csv'
+        'data/mountain_bike/mrp.bom.line.csv',
+        'data/meldeeinheit_pma14/res.partner.csv',
+        'data/meldeeinheit_pma14/product.product.csv',
+        'data/meldeeinheit_pma14/product.supplierinfo.csv',
+        'data/meldeeinheit_pma14/mrp.bom.csv',
+        'data/meldeeinheit_pma14/mrp.bom.line.csv'
     ],
 }

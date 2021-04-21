@@ -20,9 +20,7 @@ This is the bill of material with lead times:
 
 ### Meldeeinheit PMA14
 
-This is a real product from the customer.
-
-![](demand_planner_test_data/data/meldeeinheit_pma14/BoM.png)
+This is a real product from the customer. The test data set contains all customer product, this one is the most complex.
 
 ## Import Sequence
 
@@ -39,9 +37,13 @@ When exporting models use these fields and save as csv file.
 
 **product.product**
 
+Filter: `active is true or false`
+
 ```
 id
+active
 name
+type
 standard_price
 produce_delay
 sale_delay
@@ -79,8 +81,11 @@ delay
 
 **res.partner**
 
+Filter: `active is true or false`
+
 ```
 id
+active
 name
 is_company
 ```
