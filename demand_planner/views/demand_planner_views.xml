@@ -20,6 +20,7 @@
         <field name='model'>demand.planner</field>
         <field name='arch' type='xml'>
             <search string='Demand Planner'>
+                <field name="product_id"/>
                 <field name="proposed_order_date"/>
                 <filter string="7 days" name="proposed_order_date_filter"
                         domain="[('proposed_order_date','&lt;=', ((context_today()+datetime.timedelta(days=7)).strftime('%Y-%m-%d')))]"/>
