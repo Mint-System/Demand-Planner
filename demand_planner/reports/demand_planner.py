@@ -2,18 +2,72 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class DemandPlanner(models.Model):
     _name = 'demand.planner'
     _description = 'Demand Planner'
+    _rec_name = 'product_id'
 
     product_id = fields.Many2one('product.product', 'Product')
     proposed_order_date = fields.Date("Proposed Order Date")
     delivery_order = fields.Many2one('stock.picking')
     delivery_order_date = fields.Date('Delivery Date')
     qty = fields.Float("Quantity")
+    purchase_order_count = fields.Integer(
+        compute='_compute_purchase_order_count',
+        string='Purchase Order Count',
+    )
+    manufacturing_order_count = fields.Integer(
+        compute='_compute_manufacturing_order_count',
+        string='Manufacturing Order Count'
+    )
+
+    def name_get(self):
+        res = []
+        for record in self:
+            name = record.product_id.name + ' (%s)'% record.delivery_order.name
+            res.append((record.id, name))
+        return res
+
+    @api.depends('product_id')
+    def _compute_purchase_order_count(self):
+        domain = [
+            ('order_id.state', 'in', ['draft', 'sent', 'to approve']),
+            ('product_id', 'in', self.mapped('product_id.id')),
+        ]
+        order_lines = self.env['purchase.order.line'].read_group(domain, ['product_id', 'order_id'], ['product_id'])
+        purchased_data = dict([(data['product_id'][0], data['product_id_count']) for data in order_lines])
+        for dp in self:
+            dp.purchase_order_count = purchased_data.get(dp.product_id.id, 0)
+
+    @api.depends('product_id')
+    def _compute_manufacturing_order_count(self):
+        domain = [
+            ('state', 'in', ['draft', 'confirmed']),
+            ('product_id', 'in', self.mapped('product_id.id')),
+        ]
+        orders = self.env['mrp.production'].read_group(domain, ['product_id'], ['product_id'])
+        manufacturing_order_data = dict([(data['product_id'][0], data['product_id_count']) for data in orders])
+        for dp in self:
+            dp.manufacturing_order_count = manufacturing_order_data.get(dp.product_id.id, 0)
+
+    def action_view_po(self):
+        action = self.env["ir.actions.actions"]._for_xml_id("purchase.purchase_rfq")
+        action['domain'] = [
+            ('state', 'in', ['draft', 'sent', 'to approve']),
+            ('order_line.product_id', '=', self.product_id.id)
+        ]
+        return action
+
+    def action_view_mo(self):
+        action = self.env["ir.actions.actions"]._for_xml_id("mrp.mrp_production_action")
+        action['domain'] = [
+            ('state', 'in', ['draft']),
+            ('product_id', '=', self.product_id.id)
+        ]
+        return action
 
     def action_replenish(self):
         return {
@@ -88,6 +142,8 @@ class DemandPlanner(models.Model):
                         'delay': parent_line_delay + bom_line['delay'],
                         'qty_available': bom_line['qty_available'],
                         'parent_qty': data['bom_qty'],
+                        'parent_qty_available': data['qty_available'],
+                        'parent_bom_quantity': data['bom_qty'],
                     }
                 else:
                     # check if same product is used inside sub BoMs then we sum up the required quantities
@@ -194,6 +250,7 @@ class DemandPlanner(models.Model):
         products, delivery_process = self._prepare_bom_structure_with_delivery_process()
         demanded_stock = {}
         demand_planner_data = []
+        previous_forcast = {}
         for delivery in delivery_process:
             prodid = delivery['product']
             data = products[prodid]
@@ -207,19 +264,36 @@ class DemandPlanner(models.Model):
             })
             bom_lines_dict = data['lines']
             for bom_product_id, values in bom_lines_dict.items():
+                if values['parent_qty_available']:
+                    values['parent_qty_available'] -= values['parent_bom_quantity']
+                    continue
                 line_proposed_date = delivery['delivery_date'] - timedelta(values['delay'])
                 required_qty = sale_qty * values['quantity']
                 stock_on_hand_data = self._get_forecasted_stock(values['prod_id'], line_proposed_date, values)
                 forecasted_qty = stock_on_hand_data['forecasted_qty'] or stock_on_hand_data['qty_available']
+                if previous_forcast.get('previous_demand'):
+                    forecasted_qty -= previous_forcast['previous_demand']
                 if forecasted_qty <= 0:
                     forecasted_qty = 0
                 else:
+                    previous_demand = previous_forcast.get('previous_demand', 0) + demanded_stock.get(bom_product_id, 0)
+                    previous_forcast.update(
+                        date=line_proposed_date,
+                        bom_product_id=bom_product_id,
+                        previous_demand=previous_demand
+                    )
                     forecasted_qty -= demanded_stock.get(bom_product_id, 0)
 
                 # Check with what is on hand
                 to_order_qty = 0
                 if required_qty > forecasted_qty:
                     to_order_qty = required_qty - forecasted_qty
+                    # if parent product is not there then we don't create child lines, this is to support use case
+                    # when the BoM product is somehow bought or made available using on hand qty update wizard.
+                    # In such cases, it's components should be considered available
+                    parent_product_line = next((item for item in demand_planner_data if item["delivery_order"] == delivery['delivery_id'] and item['product_id'] == values['parent_id']), {})
+                    if not parent_product_line:
+                        continue
                     demand_planner_data.append({
                         'proposed_order_date': line_proposed_date,
                         'product_id': values['prod_id'],
@@ -235,4 +309,4 @@ class DemandPlanner(models.Model):
                     demanded_stock[bom_product_id] = remaining_qty
 
         # Create Entry in demand planner
-        return self.create(demand_planner_data)
+        return self.sudo().create(demand_planner_data)

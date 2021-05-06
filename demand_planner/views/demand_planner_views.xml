@@ -10,8 +10,15 @@
                 <field name="delivery_order" widget="many2one"/>
                 <field name="delivery_order_date"/>
                 <field name="qty"/>
+                <field name="purchase_order_count" invisible="1"/>
+                <field name="manufacturing_order_count" invisible="1"/>
                 <button name="action_replenish" string="Replenish" type="object" class="o_replenish_buttons"
                         icon="fa-refresh"/>
+                <!-- Opens Draft POs and MOs -->
+                <button class="oe_stat_button" name="action_view_po" attrs="{'invisible': [('purchase_order_count', '=', 0)]}"
+                        type="object" icon="fa-shopping-cart"/>
+                <button class="oe_stat_button" name="action_view_mo" attrs="{'invisible': [('manufacturing_order_count', '=', 0)]}"
+                        type="object" icon="fa-industry"/>
             </tree>
         </field>
     </record>
@@ -31,11 +38,22 @@
             </search>
         </field>
     </record>
+    <record id="demand_planner_calendar_view" model="ir.ui.view">
+        <field name="name">demand.planner.calendar.view</field>
+        <field name="model">demand.planner</field>
+        <field name="arch" type="xml">
+            <calendar string="Demand Planner" mode="month" date_start="proposed_order_date" color="delivery_order" quick_add="False" create="0" event_limit="5">
+                <field name="delivery_order"/>
+                <field name="product_id"/>
+                <field name="proposed_order_date"/>
+            </calendar>
+        </field>
+    </record>
     <record id="action_demand_planner" model="ir.actions.act_window">
         <field name="name">Demand Planner</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">demand.planner</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">tree,calendar</field>
         <field name="context">{"search_default_proposed_order_date_filter": 1}</field>
         <field name="search_view_id" ref="demand_planner.search"/>
     </record>
