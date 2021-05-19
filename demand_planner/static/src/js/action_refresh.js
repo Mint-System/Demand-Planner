@@ -40,7 +40,7 @@ odoo.define('demand_planner.action_refresh', function (require) {
             }).then((result) => {
                 if (result.length) {
                     this.$buttons.find('.container_last_updated_on').removeClass('d-none');
-                    this.$buttons.find('.container_last_updated_date').text(moment(result[0].create_date).format('MM/DD/Y'));
+                    this.$buttons.find('.container_last_updated_date').text(moment(result[0].create_date).format('MM/DD/Y HH:MM'));
                 } else {
                     this.$buttons.find('.container_last_updated_on').addClass('d-none');
                 }
