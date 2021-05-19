@@ -71,7 +71,7 @@ class DemandPlanner(models.Model):
 
     def action_replenish(self):
         return {
-            'name': "Product Replanish",
+            'name': "Product Replenish",
             'type': 'ir.actions.act_window',
             'view_type': 'form',
             'view_mode': 'form',
