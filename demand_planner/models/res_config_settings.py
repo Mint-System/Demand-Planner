@@ -13,5 +13,5 @@ class ResConfigSettings(models.TransientModel):
     product_category_id = fields.Many2one('product.category', string='Product Category',
                                           config_parameter='demand_planner.product_category_id',
                                           help="Calculate demand only for products assigned to this category.")
-    days_starting_planner = fields.Integer(config_parameter='demand_planner.days_starting_planner', default=1)
+    days_starting_planner = fields.Integer(config_parameter='demand_planner.days_starting_planner', default=0)
     days_ending_planner = fields.Integer(config_parameter='demand_planner.days_ending_planner', default=90)

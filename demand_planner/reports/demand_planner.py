@@ -18,10 +18,12 @@ class DemandPlanner(models.Model):
     purchase_order_count = fields.Integer(
         compute='_compute_purchase_order_count',
         string='Purchase Order Count',
+        store=True
     )
     manufacturing_order_count = fields.Integer(
         compute='_compute_manufacturing_order_count',
-        string='Manufacturing Order Count'
+        string='Manufacturing Order Count',
+        store=True
     )
 
     def name_get(self):
@@ -255,6 +257,7 @@ class DemandPlanner(models.Model):
             prodid = delivery['product']
             data = products[prodid]
             sale_qty = delivery['sale_qty']
+
             demand_planner_data.append({
                 'proposed_order_date': delivery['delivery_date'] - timedelta(data['delay']),
                 'product_id': prodid,
@@ -265,6 +268,8 @@ class DemandPlanner(models.Model):
             bom_lines_dict = data['lines']
             for bom_product_id, values in bom_lines_dict.items():
                 if values['parent_qty_available']:
+                    if demand_planner_data:
+                        demand_planner_data.pop()
                     values['parent_qty_available'] -= values['parent_bom_quantity']
                     continue
                 line_proposed_date = delivery['delivery_date'] - timedelta(values['delay'])

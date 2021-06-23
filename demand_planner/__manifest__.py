@@ -22,6 +22,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'data/demand_planner_config.xml',
         'views/demand_planner_templates.xml',
         'views/demand_planner_views.xml',
         'views/res_config_settings_views.xml',
