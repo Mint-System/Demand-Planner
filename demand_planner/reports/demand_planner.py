@@ -124,7 +124,7 @@ class DemandPlanner(models.Model):
             })
         return components
 
-    def _get_pdf_line(self, bom_id, product_id=False, qty=1, child_bom_ids=[], unfolded=False):
+    def _get_pdf_line(self, bom_id, product_id=False, qty=1, child_bom_ids=[], unfolded=False, level_depth=0):
 
         def get_sub_lines(bom, product_id, line_qty, line_id, level):
             data = self._get_bom(bom=bom, product_id=product_id.id, line_qty=line_qty, line_id=line_id, level=level)
@@ -157,7 +157,8 @@ class DemandPlanner(models.Model):
                             lines[line_product_id]['delay'] = delay
                 if bom_line['child_bom'] and (unfolded or bom_line['child_bom'] in child_bom_ids):
                     line = self.env['mrp.bom.line'].browse(bom_line['line_id'])
-                    lines.update(get_sub_lines(line.child_bom_id, line.product_id, bom_line['prod_qty'], line, level + 1))
+                    if level!=level_depth:
+                        lines.update(get_sub_lines(line.child_bom_id, line.product_id, bom_line['prod_qty'], line, level + 1))
             return lines
 
         lines = {}
@@ -198,6 +199,7 @@ class DemandPlanner(models.Model):
         is_calculate_theoretical_order = ICP.get_param('demand_planner.is_calculate_theoretical_order', 0)
         if is_calculate_theoretical_order:
             product_category_id = int(ICP.get_param('demand_planner.product_category_id', 0))
+            level_depth = int(ICP.get_param('demand_planner.level_depth', 0))
             # Set the domain for child categories
             if product_category_id:
                 domain = [('id', 'child_of', product_category_id)]
@@ -225,7 +227,7 @@ class DemandPlanner(models.Model):
                     if main_product.id not in products:
                         # Ignore products without BoM as such data will have pickings and reflects on the stock
                         if bom:
-                            bom_lines = self._get_pdf_line(bom.id, False, 1, [], True)
+                            bom_lines = self._get_pdf_line(bom.id, False, 1, [], True, level_depth)
                             # Store the bom_lines in products dict
                             products[main_product.id] = bom_lines
         return products, delivery_process

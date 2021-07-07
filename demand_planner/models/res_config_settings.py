@@ -15,3 +15,4 @@ class ResConfigSettings(models.TransientModel):
                                           help="Calculate demand only for products assigned to this category.")
     days_starting_planner = fields.Integer(config_parameter='demand_planner.days_starting_planner', default=0)
     days_ending_planner = fields.Integer(config_parameter='demand_planner.days_ending_planner', default=90)
+    level_depth = fields.Integer(string='Calculation Depth', config_parameter='demand_planner.level_depth', default=10)
