@@ -25,6 +25,7 @@
         'data/demand_planner_config.xml',
         'views/demand_planner_templates.xml',
         'views/demand_planner_views.xml',
+        'views/stock_picking_view.xml',
         'views/res_config_settings_views.xml',
         'wizards/product_replenish_views.xml',
     ],

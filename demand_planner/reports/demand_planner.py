@@ -13,6 +13,7 @@ class DemandPlanner(models.Model):
     product_id = fields.Many2one('product.product', 'Product')
     proposed_order_date = fields.Date("Proposed Order Date")
     delivery_order = fields.Many2one('stock.picking')
+    manufacturing_order = fields.Many2one('mrp.production')
     delivery_order_date = fields.Date('Delivery Date')
     qty = fields.Float("Quantity")
     purchase_order_count = fields.Integer(
@@ -187,8 +188,51 @@ class DemandPlanner(models.Model):
             ('company_id', '=', self.env.company.id),
         ])
 
+    def _get_mo(self):
+        # Filter the mo
+        ICP = self.env['ir.config_parameter'].sudo()
+        res_max_days = int(ICP.get_param('demand_planner.days_ending_planner', 0))
+        res_min_days = int(ICP.get_param('demand_planner.days_starting_planner', 0))
+        date_today = fields.Date.today()
+        max_date = date_today + timedelta(days=res_max_days)
+        min_date = date_today + timedelta(days=res_min_days)
+
+        mrp_obj = self.env['mrp.production'].sudo()
+        mrps = mrp_obj.search([
+            ('state', 'in', ('draft', 'confirmed')),
+            ('date_planned_start', '<=', max_date),
+            ('date_planned_start', '>=', min_date),
+            ('company_id', '=', self.env.company.id)
+            ])
+
+        for mrp in mrps:
+            if mrp.product_id.mapped('route_ids.rule_ids.picking_type_id').filtered(lambda r: r.is_demand_planner):
+                mrp_obj |= mrp
+        return mrp_obj
+
+
     def _prepare_bom_structure_with_delivery_process(self):
         deliveries = self._get_pickings()
+        manufacture_orders = self._get_mo()
+        order_process_sequence = []
+        # Create a new dict to store deliveries and manufacturing
+        for d in deliveries:
+            order_process_sequence.append({
+                'id': d.id,
+                'delivery_date' : d.sale_id.commitment_date or d.sale_id.scheduled_date,
+                'type': 'd',
+                'object': d
+                })
+        for m in manufacture_orders:
+            order_process_sequence.append({
+                'id': m.id,
+                'delivery_date' : m.date_planned_start,
+                'type': 'm',
+                'object': m
+                })
+        # Sort on delivery date for processing in increasing order.
+        sorted(order_process_sequence, key=lambda x: x['delivery_date'])
+
         delivery_process = []
         products = {}  # To store the products BOM structure [ Bike, Table ]
         # Assuming we have to process all categories
@@ -204,23 +248,49 @@ class DemandPlanner(models.Model):
             if product_category_id:
                 domain = [('id', 'child_of', product_category_id)]
             product_category_ids = self.env['product.category'].search(domain).ids
-        for delivery in deliveries:
-            sale = delivery.sale_id
-            delivery_date = sale.commitment_date or delivery.scheduled_date
-            for saleline in delivery.sale_id.order_line:
-                main_product = saleline.product_id
-                to_calculate_product = True
+
+
+        for order in order_process_sequence:
+            delivery_date = order['delivery_date']
+
+            main_product = None
+            to_calculate_product = True
+            # Process for saleorder
+            if(order['type']=='d'):
+                for saleline in order['object'].sale_id.order_line:
+                    main_product = saleline.product_id
+
+                    if is_calculate_theoretical_order:
+                        to_calculate_product = True if main_product.categ_id.id in product_category_ids else False
+                    # Check if product in order_line belongs to categories computed
+                    if to_calculate_product:
+                        # Check for bom, if multiple found take the latest created bom
+                        bom = main_product.bom_ids and main_product.bom_ids[-1]
+                        if bom:
+                            delivery_process.append({
+                                'delivery_id': order['id'],
+                                'delivery_date': delivery_date,
+                                'sale_qty': saleline.product_uom_qty,
+                                'product': main_product.id,
+                            })
+                        # Process only if the product is not found in products dict
+                        if main_product.id not in products:
+                            # Ignore products without BoM as such data will have pickings and reflects on the stock
+                            if bom:
+                                bom_lines = self._get_pdf_line(bom.id, False, 1, [], True, level_depth)
+                                # Store the bom_lines in products dict
+                                products[main_product.id] = bom_lines
+            else:
+                main_product = order['object'].product_id
                 if is_calculate_theoretical_order:
                     to_calculate_product = True if main_product.categ_id.id in product_category_ids else False
-                # Check if product in order_line belongs to categories computed
                 if to_calculate_product:
-                    # Check for bom, if multiple found take the latest created bom
                     bom = main_product.bom_ids and main_product.bom_ids[-1]
                     if bom:
                         delivery_process.append({
-                            'delivery_id': delivery.id,
+                            'manufacturing_id': order['id'],
                             'delivery_date': delivery_date,
-                            'sale_qty': saleline.product_uom_qty,
+                            'sale_qty': order['object'].product_qty,
                             'product': main_product.id,
                         })
                     # Process only if the product is not found in products dict
@@ -230,7 +300,9 @@ class DemandPlanner(models.Model):
                             bom_lines = self._get_pdf_line(bom.id, False, 1, [], True, level_depth)
                             # Store the bom_lines in products dict
                             products[main_product.id] = bom_lines
+
         return products, delivery_process
+
 
     def _get_forecasted_stock(self, product_id, date, line_data):
         # Find the product and date in forecast
@@ -246,6 +318,8 @@ class DemandPlanner(models.Model):
         forecasted_qty = forecast_report[0]['product_qty'] if forecast_report else 0
         return {'forecasted_qty': forecasted_qty, 'qty_available': line_data['qty_available']}
 
+
+
     def get_data(self):
         # Remove all data from demand planner
         self.env.cr.execute('''
@@ -259,14 +333,15 @@ class DemandPlanner(models.Model):
             prodid = delivery['product']
             data = products[prodid]
             sale_qty = delivery['sale_qty']
-
-            demand_planner_data.append({
-                'proposed_order_date': delivery['delivery_date'] - timedelta(data['delay']),
-                'product_id': prodid,
-                'delivery_order': delivery['delivery_id'],
-                'delivery_order_date': delivery['delivery_date'],
-                'qty': sale_qty,
-            })
+            if delivery.get('delivery_id'):
+                demand_planner_data.append({
+                    'proposed_order_date': delivery['delivery_date'] - timedelta(data['delay']),
+                    'product_id': prodid,
+                    'delivery_order': delivery.get('delivery_id','') ,
+                    'manufacturing_order' : delivery.get('manufacturing_id', ''),
+                    'delivery_order_date': delivery['delivery_date'],
+                    'qty': sale_qty,
+                })
             bom_lines_dict = data['lines']
             for bom_product_id, values in bom_lines_dict.items():
                 if values['parent_qty_available']:
@@ -298,13 +373,14 @@ class DemandPlanner(models.Model):
                     # if parent product is not there then we don't create child lines, this is to support use case
                     # when the BoM product is somehow bought or made available using on hand qty update wizard.
                     # In such cases, it's components should be considered available
-                    parent_product_line = next((item for item in demand_planner_data if item["delivery_order"] == delivery['delivery_id'] and item['product_id'] == values['parent_id']), {})
-                    if not parent_product_line:
+                    parent_product_line = next((item for item in demand_planner_data if (delivery.get('delivery_id') and (item["delivery_order"] == delivery['delivery_id'])) and item['product_id'] == values['parent_id']), {})
+                    if delivery.get('delivery_id') and not parent_product_line:
                         continue
                     demand_planner_data.append({
                         'proposed_order_date': line_proposed_date,
                         'product_id': values['prod_id'],
-                        'delivery_order': delivery['delivery_id'],
+                        'delivery_order': delivery.get('delivery_id','') ,
+                        'manufacturing_order' : delivery.get('manufacturing_id', ''),
                         'delivery_order_date': delivery['delivery_date'],
                         'qty': to_order_qty,
                     })

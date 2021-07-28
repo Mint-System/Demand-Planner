@@ -8,6 +8,7 @@
                 <field name="product_id" widget="many2one"/>
                 <field name="proposed_order_date"/>
                 <field name="delivery_order" widget="many2one"/>
+                <field name="manufacturing_order" widget="many2one"/>
                 <field name="delivery_order_date"/>
                 <field name="qty"/>
                 <field name="purchase_order_count"/>
