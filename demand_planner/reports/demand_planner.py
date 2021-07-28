@@ -219,7 +219,7 @@ class DemandPlanner(models.Model):
         for d in deliveries:
             order_process_sequence.append({
                 'id': d.id,
-                'delivery_date' : d.sale_id.commitment_date or d.sale_id.scheduled_date,
+                'delivery_date' : d.sale_id.commitment_date or d.scheduled_date,
                 'type': 'd',
                 'object': d
                 })
