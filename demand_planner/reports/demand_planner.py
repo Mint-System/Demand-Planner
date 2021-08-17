@@ -182,7 +182,8 @@ class DemandPlanner(models.Model):
         return self.env['stock.picking'].search([
             ('state', 'not in', ('cancel', 'draft', 'done')),
             ('picking_type_id.code', '=', 'outgoing'),
-            ('sale_id', '!=', False),
+            ('picking_type_id.is_demand_planner', '=', True),
+            # ('sale_id', '!=', False),
             ('scheduled_date', '<=', max_date),
             ('scheduled_date', '>=', min_date),
             ('company_id', '=', self.env.company.id),
@@ -257,7 +258,9 @@ class DemandPlanner(models.Model):
             to_calculate_product = True
             # Process for saleorder
             if(order['type']=='d'):
-                for saleline in order['object'].sale_id.order_line:
+                # Change this loop to use picking lines 
+                # for saleline in order['object'].sale_id.order_line:
+                for saleline in order['object'].move_lines:
                     main_product = saleline.product_id
 
                     if is_calculate_theoretical_order:
