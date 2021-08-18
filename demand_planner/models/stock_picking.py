@@ -6,4 +6,4 @@ from odoo import fields, models
 class PickingType(models.Model):
     _inherit = 'stock.picking.type'
 
-    is_demand_planner = fields.Boolean('Calculate demand for manufacturing orders')
+    is_demand_planner = fields.Boolean('Calculate demand for orders of this type')

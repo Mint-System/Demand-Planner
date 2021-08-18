@@ -240,7 +240,7 @@ class DemandPlanner(models.Model):
         domain = []
         product_category_ids = []
         ICP = self.env['ir.config_parameter'].sudo()
-        # Check for option of theoritical order in settings
+        # Check for option of theoretical order in settings
         is_calculate_theoretical_order = ICP.get_param('demand_planner.is_calculate_theoretical_order', 0)
         if is_calculate_theoretical_order:
             product_category_id = int(ICP.get_param('demand_planner.product_category_id', 0))
