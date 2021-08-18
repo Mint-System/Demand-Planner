@@ -234,6 +234,7 @@ class DemandPlanner(models.Model):
         # Sort on delivery date for processing in increasing order.
         sorted(order_process_sequence, key=lambda x: x['delivery_date'])
 
+        level_depth=10
         delivery_process = []
         products = {}  # To store the products BOM structure [ Bike, Table ]
         # Assuming we have to process all categories
