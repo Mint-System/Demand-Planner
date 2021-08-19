@@ -12,13 +12,13 @@
                 <field name="delivery_order_date"/>
                 <field name="qty"/>
                 <field name="purchase_order_count"/>
-                <field name="manufacturing_order_count"/>
+                <field name="manufacturing_order_counts"/>
                 <button name="action_replenish" string="Replenish" type="object" class="o_replenish_buttons"
                         icon="fa-refresh"/>
                 <!-- Opens Draft POs and MOs -->
                 <button class="oe_stat_button" name="action_view_po" attrs="{'invisible': [('purchase_order_count', '=', 0)]}"
                         type="object" icon="fa-shopping-cart"/>
-                <button class="oe_stat_button" name="action_view_mo" attrs="{'invisible': [('manufacturing_order_count', '=', 0)]}"
+                <button class="oe_stat_button" name="action_view_mo" attrs="{'invisible': [('manufacturing_order_counts', '=', 0)]}"
                         type="object" icon="fa-industry"/>
             </tree>
         </field>
@@ -33,9 +33,10 @@
                 <filter string="7 days" name="proposed_order_date_filter"
                         domain="[('proposed_order_date','&lt;=', ((context_today()+datetime.timedelta(days=7)).strftime('%Y-%m-%d')))]"/>
                 <group expand="0" string="Group By...">
-                        <filter string="Product" name="product" domain="[]" context="{'group_by': 'product_id'}"/>
-                        <filter string='Delivery Order' name="group_by_delivery" domain="[]" context="{'group_by' : 'delivery_order'}"/>
-                   </group>
+                    <filter string="Product" name="product" domain="[]" context="{'group_by': 'product_id'}"/>
+                    <filter string='Delivery Order' name="group_by_delivery" domain="[]" context="{'group_by' : 'delivery_order'}"/>
+                    <filter string='Manufacturing Order' name="group_by_manufacturing" context="{'group_by' : 'manufacturing_order'}"/>
+                </group>
             </search>
         </field>
     </record>

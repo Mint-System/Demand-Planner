@@ -21,7 +21,7 @@ class DemandPlanner(models.Model):
         string='Purchase Order Count',
         store=True
     )
-    manufacturing_order_count = fields.Integer(
+    manufacturing_order_counts = fields.Integer(
         compute='_compute_manufacturing_order_count',
         string='Manufacturing Order Count',
         store=True
@@ -30,7 +30,7 @@ class DemandPlanner(models.Model):
     def name_get(self):
         res = []
         for record in self:
-            name = record.product_id.name + ' (%s)'% record.delivery_order.name
+            name = record.product_id.name + ' (%s)'% (record.delivery_order.name if record.delivery_order else record.manufacturing_order.name)
             res.append((record.id, name))
         return res
 
@@ -54,7 +54,7 @@ class DemandPlanner(models.Model):
         orders = self.env['mrp.production'].read_group(domain, ['product_id'], ['product_id'])
         manufacturing_order_data = dict([(data['product_id'][0], data['product_id_count']) for data in orders])
         for dp in self:
-            dp.manufacturing_order_count = manufacturing_order_data.get(dp.product_id.id, 0)
+            dp.manufacturing_order_counts = manufacturing_order_data.get(dp.product_id.id, 0)
 
     def action_view_po(self):
         action = self.env["ir.actions.actions"]._for_xml_id("purchase.purchase_rfq")
