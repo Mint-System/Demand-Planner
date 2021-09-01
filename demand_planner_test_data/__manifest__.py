@@ -31,4 +31,6 @@
         'data/meldeeinheit_pma14/mrp.bom.csv',
         'data/meldeeinheit_pma14/mrp.bom.line.csv'
     ],
+
+    'auto_install': False,
 }
