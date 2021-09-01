@@ -14,7 +14,7 @@
     'website': "https://www.odoo.com",
 
     'category': 'Inventory',
-    'version': '14.0.1.0.1',
+    'version': '14.0.1.0.2',
 
     # any module necessary for this one to work correctly
     'depends': ['demand_planner'],
