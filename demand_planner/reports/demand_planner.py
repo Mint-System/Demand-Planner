@@ -67,7 +67,7 @@ class DemandPlanner(models.Model):
     def action_view_mo(self):
         action = self.env["ir.actions.actions"]._for_xml_id("mrp.mrp_production_action")
         action['domain'] = [
-            ('state', 'in', ['draft']),
+            ('state', 'in', ['draft', 'confirmed']),
             ('product_id', '=', self.product_id.id)
         ]
         return action
