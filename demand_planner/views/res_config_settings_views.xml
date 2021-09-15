@@ -10,7 +10,7 @@
             <xpath expr="//div[@name='operations_setting_container']" position="after">
                 <h2 class="mt32">Demand Planner</h2>
                 <div class="row mt16 o_settings_container" name="demand_planner_setting_container">
-                    <div class="col-12 col-lg-6 o_setting_box" id="paper_format_setting">
+                    <div class="col-12 col-lg-6 o_setting_box" id="demand_planner_setting">
                         <div class="o_setting_left_pane">
                             <field name="is_calculate_theoretical_order"/>
                         </div>
