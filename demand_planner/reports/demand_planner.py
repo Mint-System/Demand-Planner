@@ -257,6 +257,7 @@ class DemandPlanner(models.Model):
 
             main_product = None
             to_calculate_product = True
+
             # Process for saleorder
             if(order['type']=='d'):
                 # Change this loop to use picking lines 
@@ -268,6 +269,12 @@ class DemandPlanner(models.Model):
                         to_calculate_product = True if main_product.categ_id.id in product_category_ids else False
                     # Check if product in order_line belongs to categories computed
                     if to_calculate_product:
+                        # Check for the main product forecast, to check if it can be replinished.
+                        t = self.env['report.stock.report_product_product_replenishment']._get_report_data([main_product.product_tmpl_id.id])
+                        filtered_dict = [line['replenishment_filled'] for line in t['lines'] if line['move_out'].picking_id.id == order['object'].id]
+                        if filtered_dict[0]:
+                            continue
+
                         # Check for bom, if multiple found take the latest created bom
                         bom = main_product.bom_ids and main_product.bom_ids[-1]
                         if bom:
