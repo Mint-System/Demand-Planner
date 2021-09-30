@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from datetime import timedelta
+from datetime import datetime, timedelta
 from odoo import api, fields, models
 
 
@@ -81,7 +81,11 @@ class DemandPlanner(models.Model):
             'res_model': 'product.replenish',
             'view_id': self.env.ref('demand_planner.view_product_replenish_inherit_demand_planner').id,
             'target': 'new',
-            'context': {'default_product_id': self.product_id.id, 'default_quantity': self.qty, 'default_route_ids': self.product_id.route_ids.ids},
+            'context': {
+                'default_product_id': self.product_id.id,
+                'default_quantity': self.qty,
+                'default_route_ids': self.product_id.route_ids.ids,
+                'default_date_planned': datetime.combine(self.proposed_order_date, datetime.now().time())},
         }
 
     def _get_bom(self, bom=False, product_id=False, line_qty=False, line_id=False, level=False):
@@ -269,9 +273,12 @@ class DemandPlanner(models.Model):
                         to_calculate_product = True if main_product.categ_id.id in product_category_ids else False
                     # Check if product in order_line belongs to categories computed
                     if to_calculate_product:
-                        # Check for the main product forecast, to check if it can be replinished.
-                        t = self.env['report.stock.report_product_product_replenishment']._get_report_data([main_product.product_tmpl_id.id])
-                        filtered_dict = [line['replenishment_filled'] for line in t['lines'] if line['move_out'].picking_id.id == order['object'].id]
+                        # Check for the main product forecast, to check if it can be replenished.
+                        replenish_data = self.env['report.stock.report_product_product_replenishment']._get_report_data([main_product.product_tmpl_id.id])
+                        filtered_dict = []
+                        for line in replenish_data['lines']:
+                            if line['move_out'] and line['move_out'].picking_id.id == order['object'].id
+                                filtered_dict.append(line['replenishment_filled'] )
                         if filtered_dict[0]:
                             continue
 

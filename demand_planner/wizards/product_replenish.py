@@ -45,3 +45,10 @@ class ProductReplenish(models.TransientModel):
         if self._context.get('active_model') == 'demand.planner' and self.seller_id:
             values['supplierinfo_name'] = self.seller_id
         return values
+
+    @api.model
+    def default_get(self, fields):
+        res = super(ProductReplenish, self).default_get(fields)
+        if self.env.context.get('default_date_planned'):
+            res['date_planned'] = self.env.context.get('default_date_planned')
+        return res
