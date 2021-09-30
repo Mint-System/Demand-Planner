@@ -277,7 +277,7 @@ class DemandPlanner(models.Model):
                         replenish_data = self.env['report.stock.report_product_product_replenishment']._get_report_data([main_product.product_tmpl_id.id])
                         filtered_dict = []
                         for line in replenish_data['lines']:
-                            if line['move_out'] and line['move_out'].picking_id.id == order['object'].id
+                            if line['move_out'] and line['move_out'].picking_id.id == order['object'].id:
                                 filtered_dict.append(line['replenishment_filled'] )
                         if filtered_dict[0]:
                             continue
