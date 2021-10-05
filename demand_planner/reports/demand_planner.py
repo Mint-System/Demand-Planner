@@ -284,9 +284,11 @@ class DemandPlanner(models.Model):
                         replenish_data = self.env['report.stock.report_product_product_replenishment']._get_report_data([main_product.product_tmpl_id.id])
                         filtered_dict = []
                         for line in replenish_data['lines']:
-                            if line['move_out'] and line['move_out'].picking_id.id == order['object'].id:
+                            if line['move_out'] and line['move_out'].picking_id.id == order['object'].id and line['receipt_date'] and line['quantity'] > 0:
+                                _logger.info('This shows that replenishment is found in forecasted report of the product.')
                                 filtered_dict.append(line['replenishment_filled'] )
-                        if filtered_dict[0]:
+                        if filtered_dict:
+                            _logger.info('No replenishment found -> Go for BOM')
                             continue
 
                         # Check for bom, if multiple found take the latest created bom
