@@ -3,6 +3,8 @@
 
 from datetime import datetime, timedelta
 from odoo import api, fields, models
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class DemandPlanner(models.Model):
@@ -262,6 +264,8 @@ class DemandPlanner(models.Model):
             main_product = None
             to_calculate_product = True
 
+            _logger.info(['Process:', order])
+
             # Process for saleorder
             if(order['type']=='d'):
                 # Change this loop to use picking lines 
@@ -272,6 +276,9 @@ class DemandPlanner(models.Model):
                     if is_calculate_theoretical_order:
                         to_calculate_product = True if main_product.categ_id.id in product_category_ids else False
                     # Check if product in order_line belongs to categories computed
+
+                    _logger.info(['Calculate:', saleline, to_calculate_product])
+
                     if to_calculate_product:
                         # Check for the main product forecast, to check if it can be replenished.
                         replenish_data = self.env['report.stock.report_product_product_replenishment']._get_report_data([main_product.product_tmpl_id.id])
@@ -284,6 +291,9 @@ class DemandPlanner(models.Model):
 
                         # Check for bom, if multiple found take the latest created bom
                         bom = main_product.bom_ids and main_product.bom_ids[-1]
+
+                        _logger.info(['Append BoM:', bom])
+
                         if bom:
                             delivery_process.append({
                                 'delivery_id': order['id'],
@@ -319,6 +329,8 @@ class DemandPlanner(models.Model):
                             # Store the bom_lines in products dict
                             products[main_product.id] = bom_lines
 
+        for order in delivery_process:
+            _logger.info(['Processed:', order])
         return products, delivery_process
 
 
