@@ -284,7 +284,7 @@ class DemandPlanner(models.Model):
                         replenish_data = self.env['report.stock.report_product_product_replenishment']._get_report_data([main_product.product_tmpl_id.id])
                         filtered_dict = []
                         for line in replenish_data['lines']:
-                            if line['move_out'] and line['move_out'].picking_id.id == order['object'].id and line['receipt_date'] and line['quantity'] > 0:
+                            if line['move_out'] and line['move_out'].picking_id.id == order['object'].id and line['receipt_date'] and line['quantity'] > 0 and not line['is_late']:
                                 _logger.info('This shows that replenishment is found in forecasted report of the product.')
                                 filtered_dict.append(line['replenishment_filled'] )
                         if filtered_dict:
@@ -341,7 +341,7 @@ class DemandPlanner(models.Model):
         forecast_report = self.env['report.stock.quantity'].read_group(
             [('date', '=', date),
              ('product_id', '=', product_id),
-             ('state', '=', 'forecast'),
+             ('state', '=', 'forecast'), # in , out
              ('company_id', '=', self.env.company.id)],
              ['product_qty'],
              ['date:day'],
