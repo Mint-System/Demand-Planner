@@ -14,7 +14,7 @@
     'website': "https://www.odoo.com",
 
     'category': 'Inventory',
-    'version': '14.0.1.1.2',
+    'version': '14.0.1.2.0',
 
     # any module necessary for this one to work correctly
     'depends': ['mrp', 'purchase_stock', 'sale_management', 'contacts'],
