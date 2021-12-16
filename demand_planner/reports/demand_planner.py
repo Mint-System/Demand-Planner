@@ -265,7 +265,6 @@ class DemandPlanner(models.Model):
             to_calculate_product = True
 
             _logger.info(['Process:', order])
-
             # Process for saleorder
             if(order['type']=='d'):
                 # Change this loop to use picking lines 
@@ -285,10 +284,8 @@ class DemandPlanner(models.Model):
                         filtered_dict = []
                         for line in replenish_data['lines']:
                             if line['move_out'] and line['move_out'].picking_id.id == order['object'].id and line['receipt_date'] and line['quantity'] > 0 and not line['is_late']:
-                                _logger.info('This shows that replenishment is found in forecasted report of the product.')
                                 filtered_dict.append(line['replenishment_filled'] )
                         if filtered_dict:
-                            _logger.info('No replenishment found -> Go for BOM')
                             continue
 
                         # Check for bom, if multiple found take the latest created bom
@@ -302,6 +299,7 @@ class DemandPlanner(models.Model):
                                 'delivery_date': delivery_date,
                                 'sale_qty': saleline.product_uom_qty,
                                 'product': main_product.id,
+                                'object':order['object']
                             })
                         # Process only if the product is not found in products dict
                         if main_product.id not in products:
@@ -322,6 +320,7 @@ class DemandPlanner(models.Model):
                             'delivery_date': delivery_date,
                             'sale_qty': order['object'].product_qty,
                             'product': main_product.id,
+                            'object':order['object']
                         })
                     # Process only if the product is not found in products dict
                     if main_product.id not in products:
@@ -352,6 +351,7 @@ class DemandPlanner(models.Model):
 
 
 
+
     def get_data(self):
         # Remove all data from demand planner
         self.env.cr.execute('''
@@ -363,9 +363,10 @@ class DemandPlanner(models.Model):
         previous_forcast = {}
         for delivery in delivery_process:
             prodid = delivery['product']
+
             data = products[prodid]
             sale_qty = delivery['sale_qty']
-            if delivery.get('delivery_id'):
+            if delivery.get('delivery_id'): # Avoiding the top level products for MO
                 demand_planner_data.append({
                     'proposed_order_date': delivery['delivery_date'] - timedelta(data['delay']),
                     'product_id': prodid,
@@ -374,14 +375,30 @@ class DemandPlanner(models.Model):
                     'delivery_order_date': delivery['delivery_date'],
                     'qty': sale_qty,
                 })
+            parent_id_to_skip = None
             bom_lines_dict = data['lines']
             for bom_product_id, values in bom_lines_dict.items():
+                if parent_id_to_skip and values['parent_id'] == parent_id_to_skip:
+                    continue
+                product_expected_date = None
+                product_expected_quantity = None
+                if delivery.get('manufacturing_id'):
+                    # Process raw ids
+                    product_raw_id = delivery.get('object').move_raw_ids.filtered(lambda x: x.product_id.id==bom_product_id)
+                    product_expected_quantity = product_raw_id.forecast_availability
+                    product_expected_date = product_raw_id.forecast_expected_date
+
                 if values['parent_qty_available']:
                     if demand_planner_data:
                         demand_planner_data.pop()
                     values['parent_qty_available'] -= values['parent_bom_quantity']
                     continue
                 line_proposed_date = delivery['delivery_date'] - timedelta(values['delay'])
+                if product_expected_date and line_proposed_date >= product_expected_date and values['quantity'] <= product_expected_quantity:
+                    # No need to process this
+                    # set parent_id_to_skip to ensure all child are ignored
+                    parent_id_to_skip = bom_product_id
+                    continue
                 required_qty = sale_qty * values['quantity']
                 stock_on_hand_data = self._get_forecasted_stock(values['prod_id'], line_proposed_date, values)
                 forecasted_qty = stock_on_hand_data['forecasted_qty'] or stock_on_hand_data['qty_available']
